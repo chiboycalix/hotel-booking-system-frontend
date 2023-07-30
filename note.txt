@@ -1,0 +1,23 @@
+Hotel Booking System Frontend Notes
+
+1. Folder Structure
+    *.  assets        --> all images, icons, logos, etc
+    *.  components    --> all components, e.g Button, Input, etc
+    *.  configs       --> all configurations, e.g, environments, database, etc
+    *.  constants     --> all constants, e.g, routes
+    *.  hooks         --> all custom hooks
+    *.  layout        --> layout for the app with sidebar, header, footer, and content
+    *.  pages         --> all pages in the app, e.g Login, Error, Landing, etc
+    *.  utils         --> helper functions and utilities
+
+2. Components
+    *. Button
+        Props --> onClick
+              --> children
+              --> variant (primary, secondary, tertairy, danger)
+    *. Input
+        Props --> onChange
+              --> type
+              --> value
+              --> name
+              --> id

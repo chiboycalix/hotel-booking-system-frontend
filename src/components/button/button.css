@@ -1,0 +1,15 @@
+button {
+  width: 100%;
+  padding: 0.6rem 0rem;
+  color: #fff;
+  font-family: Lexend Deca;
+  font-size: 14px;
+  font-style: normal;
+  line-height: normal;
+}
+.primary {
+  background-color: #32c0c0;
+}
+.danger {
+  background-color: #e1341e;
+}
