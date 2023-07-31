@@ -21,3 +21,17 @@ Hotel Booking System Frontend Notes
               --> value
               --> name
               --> id
+3. pages
+    *. Landing
+        Components --> Button, Carousels, etc
+    *. Login
+        Components --> Button, Illustrations, Google/Facebook buttons,icons
+    *. Register
+        Components
+    *. Forget Password
+        Components
+    *. Reset Password
+        Components
+    *. Password Changed
+        Components
+    *. 

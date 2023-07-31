@@ -11,6 +11,9 @@ import ErrorPage from "./pages/error-page";
 import Dashboard from "./pages/dashboard";
 import Login from "./pages/login";
 import LandingPage from "./pages/landing-page";
+import Regsiter from "./pages/register"
+import ForgetPassword from './pages/forget-password'
+
 import { ROUTES } from "./constants/routes";
 
 const router = createBrowserRouter([
@@ -33,6 +36,14 @@ const router = createBrowserRouter([
   {
     path: ROUTES.LANDING,
     element: <LandingPage />,
+  },
+  {
+    path: ROUTES.REGISTER,
+    element: <Regsiter />,
+  },
+  {
+    path: ROUTES.FORGET_PASSWORD,
+    element: <ForgetPassword />,
   },
 ]);
 
