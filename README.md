@@ -1,46 +1,102 @@
-# Getting Started with Create React App
+# Hotel Booking System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Table of Contents
 
-## Available Scripts
+Introduction
+Features
+Installation
+Usage
+Technologies Used
+Contributing
+License
+Contact
 
-In the project directory, you can run:
+## Introduction
+Welcome to the Hotel Booking System! This system is designed to facilitate seamless hotel bookings for both customers and hotel management. It aims to provide a user-friendly interface for users to search for available hotels, view hotel details, make reservations, and manage bookings efficiently. For hotel administrators, it offers tools to manage room availability, pricing, and customer reservations.
 
-### `npm start`
+Whether you are a hotel owner looking to streamline your reservation process or a traveler in search of the perfect accommodation, our Hotel Booking System has got you covered. Let's dive into the exciting features it has to offer.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Features
+User-Friendly Interface: The system provides an intuitive and visually appealing interface for easy navigation.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Hotel Search: Users can search for hotels based on location, date, price range, and other relevant criteria.
 
-### `npm test`
+Hotel Details: Users can view detailed information about each hotel, including amenities, room types, and customer reviews.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Real-Time Availability: The system offers real-time availability of rooms and updates as bookings are made.
 
-### `npm run build`
+Online Booking: Customers can make reservations online with a secure and straightforward booking process.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Booking Management: Registered users can view and manage their bookings, including canceling or modifying reservations.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Admin Dashboard: Hotel administrators have access to a powerful dashboard to manage hotel details, room availability, and pricing.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Room Management: Hotel owners can add, edit, or remove room types and update their availability.
 
-### `npm run eject`
+Dynamic Pricing: The system allows setting different prices for rooms based on seasons, demand, and other factors.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Multiple Payment Options: Users can choose from various payment methods to complete their bookings.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+User Authentication: Secure user registration and login system to protect user data and bookings.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Email Notifications: Automatic email notifications for booking confirmations, cancellations, and reminders.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Installation
+To get started with the Hotel Booking System, follow these steps:
 
-## Learn More
+1. Clone the repository from GitHub:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`git clone https://github.com/your-username/hotel-booking-system-frontend.git`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Navigate to the project directory:
+`cd hotel-booking-system-frontend
+`
+
+3. Install the required dependencies:
+   `npm install`
+
+4. Configure the database settings in .env file
+5. Run the application:
+   `npm start` 
+  
+## Usage
+Access the Hotel Booking System from your web browser by visiting http://localhost:3000 (or the appropriate address and port).
+Users can search for hotels using the search functionality and select the desired hotel for booking.
+New users can register on the platform to manage their bookings effectively.
+Hotel administrators can log in using their credentials to access the admin dashboard for managing hotel details, room availability, and bookings.
+
+## Technologies Used
+The Hotel Booking System is built using the following technologies:
+
+Front-end:
+HTML, CSS, JavaScript, Typescript, Tailwindcss
+React.js (or any other preferred frontend framework)
+
+Back-end:
+Node.js (or any other preferred backend framework)
+Express.js (or any other preferred server framework)
+
+Database:
+MongoDB (or any other preferred database system)
+
+Authentication:
+JSON Web Tokens (JWT) for secure user authentication
+
+## Contributing
+We welcome contributions from the community to enhance the Hotel Booking System. If you want to contribute, please follow these steps:
+
+Fork the repository to your GitHub account.
+Create a new branch and make your changes.
+Commit your changes and push them to your fork.
+Submit a pull request, describing the changes you've made and their purpose.
+
+## License
+The Hotel Booking System is open-source software licensed under the MIT License.
+
+## Contact
+If you have any questions, feedback, or concerns, feel free to contact us:
+
+Email: igwechinonso77@gmail.com
+GitHub: chiboycalix
+
+Thank you for using the Hotel Booking System! We hope you have a pleasant experience. Happy booking!
