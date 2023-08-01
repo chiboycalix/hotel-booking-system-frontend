@@ -1,34 +1,44 @@
-import EmailIcon from "../../assets/images/auth/email.svg";
+import LockIcon from "../../assets/images/auth/lock.svg";
 import GoogleIcon from "../../assets/images/auth/google.svg";
 import FacebookIcon from "../../assets/images/auth/facebook.svg";
 
 import { Button, Divider, Input } from "../../components";
 import { ROUTES } from "../../constants/routes";
 
-const ForgetPassword = () => {
+const ResetPassword = () => {
   return (
     <div className="w-full xl:basis-6/12">
-      <p className="text-sm text-secondary-color">Forget your password</p>
-      <h1 className="font-bold text-4xl mt-2">Forget Password</h1>
-      <p className='text-sm text-secondary-color mt-8 xl:w-3/4'>Please enter your email address below
-        you will receive a verification link</p>
+      <p className="text-sm text-secondary-color">Create new password</p>
+      <h1 className="font-bold text-4xl mt-2">Reset Password</h1>
       <form className="mt-10 w-full relative">
-        <div>
+      <div className="mt-10">
           <Input
-            name="email"
-            id="email"
-            placeHolder="Email Address"
+            name="password"
+            id="password"
+            placeHolder="Password"
             type="text"
             onChange={() => null}
             isAuthInput
             hasIcon
-            Icon={EmailIcon}
+            Icon={LockIcon}
+          />
+        </div>
+        <div className="mt-10">
+          <Input
+            name="password"
+            id="password"
+            placeHolder="Confirm Password"
+            type="text"
+            onChange={() => null}
+            isAuthInput
+            hasIcon
+            Icon={LockIcon}
           />
         </div>
         <div className="mt-4
                       xl:mt-12">
           <Button variant="primary" onClick={() => null}>
-            Continue
+            Change Password
           </Button>
         </div>
         <div className="flex mt-4 items-center gap-4
@@ -76,4 +86,4 @@ const ForgetPassword = () => {
   )
 }
 
-export default ForgetPassword
+export default ResetPassword

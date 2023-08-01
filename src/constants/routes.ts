@@ -4,5 +4,9 @@ export const ROUTES = {
   LOGIN: '/login',
   LANDING: '/landing',
   REGISTER:'/register',
-  FORGET_PASSWORD: '/forget-password'
+  FORGET_PASSWORD: '/forget-password',
+  RESET_PASSWORD: '/reset-password',
+  PASSWORD_CHANGED: '/password-changed',
+  PRIVACY_NOTICE: '/privacy-policy',
+  TERMS_OF_USE: 'terms-of-use'
 }
