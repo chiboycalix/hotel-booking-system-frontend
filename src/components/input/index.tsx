@@ -2,7 +2,7 @@ import React from "react";
 
 interface InputProps {
   Icon: any;
-  onChange: () => void;
+  onChange: (event: any) => void;
   placeHolder: string;
   type: string;
   name: string;
