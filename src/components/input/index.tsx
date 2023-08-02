@@ -10,9 +10,10 @@ interface InputProps {
   isAuthInput: boolean;
   hasIcon: boolean;
   value?: string;
+  hasError?: boolean;
 }
-const Input = ({ Icon, onChange, type, placeHolder, name, id, value, isAuthInput=false, hasIcon=false }: InputProps) => {
-  const authInputClass = 'w-full border-b border-horizontal-line-color focus:border-primary-color focus:outline-none pl-10 pb-4 placeholder:text-secondary-text-color placeholder:text-sm'
+const Input = ({ Icon, onChange, type, placeHolder, name, id, value, isAuthInput=false, hasIcon=false, hasError=false }: InputProps) => {
+  const authInputClass = `w-full border-b ${hasError ? 'border-red-500': 'border-horizontal-line-color'} focus:border-primary-color focus:outline-none pl-10 pb-4 placeholder:text-secondary-text-color placeholder:text-sm`
   return (
     <div className="w-full flex">
       { hasIcon ? <img src={Icon} alt={name} className="absolute" /> : null }

@@ -41,7 +41,7 @@ const Auth = () => {
         <img src={BottomRight} alt="BottomRight" />
       </div>
       <div
-        className="absolute flex flex-col justify-center items-center gap-20 
+        className="absolute flex flex-col justify-center items-start gap-20 
                  top-10 left-10 right-10
                  sm:left-32 sm:right-32
                  md:left-40 md:right-40

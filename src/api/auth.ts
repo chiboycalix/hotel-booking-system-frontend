@@ -1,18 +1,15 @@
 import axios from "axios";
+import { configs } from "../configs";
 
 interface AxiosError {
-  response: {
-    data: {
-      message: string;
-    }
-  }
+  message: string;
 }
 interface IAuthPayload {
   email: string;
   password: string;
 }
 
-export interface IUseLoginMutation {
+export interface IUseAuthMutation {
   mutate: (payload: IAuthPayload) => void;
   isLoading: boolean
   isError: boolean
@@ -21,9 +18,9 @@ export interface IUseLoginMutation {
 }
 
 export const login = async (loginPayload: IAuthPayload) => {
-  return axios.post(`http://localhost:8010/auth/login`, loginPayload);
+  return axios.post(`${configs.baseURL}/auth/login`, loginPayload);
 };
 
 export const register = async (registerPayload: IAuthPayload) => {
-  return axios.post(`http://localhost:8010/auth/register`, registerPayload)
+  return axios.post(`${configs.baseURL}/auth/register`, registerPayload)
 }
