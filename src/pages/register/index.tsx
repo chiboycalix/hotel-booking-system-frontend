@@ -90,7 +90,7 @@ const Register = () => {
       <h1 className="font-bold text-4xl mt-2">Registration</h1>
       {isError && <div
         className="break-words rounded-b-lg bg-danger-100 px-4 py-4 text-danger-700 mt-4">
-        {error?.message}
+       {error?.response?.data.data?.error}
       </div>}
       <form className="mt-10 w-full relative" onSubmit={handleRegisterUser}>
         <div>

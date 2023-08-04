@@ -1,3 +1,4 @@
+import React from "react";
 import LockIcon from "../../assets/images/auth/lock.svg";
 import GoogleIcon from "../../assets/images/auth/google.svg";
 import FacebookIcon from "../../assets/images/auth/facebook.svg";
@@ -6,6 +7,7 @@ import { Button, Divider, Input } from "../../components";
 import { ROUTES } from "../../constants/routes";
 
 const ResetPassword = () => {
+
   return (
     <div className="w-full xl:basis-6/12">
       <p className="text-sm text-secondary-color">Create new password</p>

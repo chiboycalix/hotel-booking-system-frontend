@@ -2,11 +2,17 @@ import axios from "axios";
 import { configs } from "../configs";
 
 interface AxiosError {
-  message: string;
+  response: {
+    data: {
+      data: {
+        error: string
+      }
+    }
+  }
 }
 interface IAuthPayload {
-  email: string;
-  password: string;
+  email?: string;
+  password?: string;
 }
 
 export interface IUseAuthMutation {
@@ -23,4 +29,12 @@ export const login = async (loginPayload: IAuthPayload) => {
 
 export const register = async (registerPayload: IAuthPayload) => {
   return axios.post(`${configs.baseURL}/auth/register`, registerPayload)
+}
+
+export const forgetPassword = async (forgetPasswordPayload: IAuthPayload) => {
+ return axios.post(`${configs.baseURL}/auth/forget-password`, forgetPasswordPayload)
+}
+
+export const resetPassword = async (resetPasswordPayload: IAuthPayload) => {
+  return axios.post(`${configs.baseURL}/auth/forget-password`, resetPasswordPayload)
 }

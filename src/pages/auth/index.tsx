@@ -15,7 +15,7 @@ import PasswordChanged from '../password-changed';
 
 
 const Auth = () => {
-  const { pathname } = useLocation();
+  const {pathname} = useLocation();
 
   const componentToRender = (param: string, cases: { [key: string]: React.ReactNode }) => {
     if (cases[param]) {
@@ -55,12 +55,12 @@ const Auth = () => {
           <img src={Illustration} alt="Illustration" />
         </div>
         {
-          componentToRender(pathname, {
-            [ROUTES.LOGIN]: <LoginPage />,
-            [ROUTES.REGISTER]: <Register />,
-            [ROUTES.FORGET_PASSWORD]: <ForgetPassword />,
-            [ROUTES.RESET_PASSWORD]: <ResetPassword />,
-            [ROUTES.PASSWORD_CHANGED]: <PasswordChanged />
+          componentToRender(pathname.split("/")[1], {
+            [ROUTES.LOGIN.split("/")[1]]: <LoginPage />,
+            [ROUTES.REGISTER.split("/")[1]]: <Register />,
+            [ROUTES.FORGET_PASSWORD.split("/")[1]]: <ForgetPassword />,
+            [ROUTES.RESET_PASSWORD.split("/")[1]]: <ResetPassword />,
+            [ROUTES.PASSWORD_CHANGED.split("/")[1]]: <PasswordChanged />
           })
         }
       </div>
