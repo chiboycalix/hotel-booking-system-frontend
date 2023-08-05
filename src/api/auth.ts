@@ -36,5 +36,9 @@ export const forgetPassword = async (forgetPasswordPayload: IAuthPayload) => {
 }
 
 export const resetPassword = async (resetPasswordPayload: IAuthPayload) => {
-  return axios.post(`${configs.baseURL}/auth/forget-password`, resetPasswordPayload)
+  return axios.post(`${configs.baseURL}/auth/reset-password`, resetPasswordPayload)
+}
+
+export const verifyAccount = async (verifyAccountPayload: IAuthPayload) => {
+  return axios.post(`${configs.baseURL}/auth/verify-account`, verifyAccountPayload)
 }

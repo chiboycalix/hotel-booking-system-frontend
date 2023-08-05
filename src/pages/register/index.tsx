@@ -60,7 +60,7 @@ const Register = () => {
     }
 
     if (formValue.confirm_password.trim() === '') {
-      setConfirmPasswordError('password cannot be empty')
+      setConfirmPasswordError('Confirm password cannot be empty')
       return
     }
 

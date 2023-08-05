@@ -8,5 +8,6 @@ export const ROUTES = {
   RESET_PASSWORD: '/reset-password/:email',
   PASSWORD_CHANGED: '/password-changed',
   PRIVACY_NOTICE: '/privacy-policy',
-  TERMS_OF_USE: '/terms-of-use'
+  TERMS_OF_USE: '/terms-of-use',
+  VERIFY_ACCOUNT:'/verify-account/:email'
 }

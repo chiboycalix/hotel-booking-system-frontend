@@ -3,44 +3,118 @@ import LockIcon from "../../assets/images/auth/lock.svg";
 import GoogleIcon from "../../assets/images/auth/google.svg";
 import FacebookIcon from "../../assets/images/auth/facebook.svg";
 
-import { Button, Divider, Input } from "../../components";
+import { Button, Divider, Input, Loader } from "../../components";
 import { ROUTES } from "../../constants/routes";
+import { useLocation, useNavigate } from "react-router-dom";
+import { IUseAuthMutation, resetPassword } from "../../api/auth";
+import { useMutation } from "@tanstack/react-query";
 
 const ResetPassword = () => {
+  const navigate = useNavigate();
+  const { pathname } = useLocation()
+  const [formValue, setFormValue] = React.useState({ password: "", confirm_password: "" })
+  const [passwordError, setPasswordError] = React.useState<string | null>(null);
+  const [confirmPasswordError, setConfirmPasswordError] = React.useState<string | null>(null);
+
+  const { mutate, isLoading, isError, error, isSuccess }: IUseAuthMutation = useMutation({
+    mutationFn: resetPassword
+  });
+
+  const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
+    const { name, value } = event.currentTarget;
+
+    setFormValue({
+      ...formValue,
+      [name]: value
+    })
+    if (name === 'password') {
+      setPasswordError(null)
+    }
+    if (name === 'confirm_password') {
+      setConfirmPasswordError(null);
+    }
+  }
+
+  const handleRegisterUser = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (formValue.password.trim() === '') {
+      setPasswordError('Password cannot be empty.');
+      return
+    }
+
+    if (formValue.confirm_password.trim() === '') {
+      setConfirmPasswordError('Confirm password cannot be empty')
+      return
+    }
+
+    if (formValue.password !== formValue.confirm_password) {
+      setConfirmPasswordError('Passwords do not match.')
+      return
+    }
+
+    mutate({
+      email: pathname?.split("/")[2],
+      password: formValue.password,
+    })
+  }
+
+  React.useEffect(() => {
+    if (isSuccess) {
+      navigate(ROUTES.PASSWORD_CHANGED, {
+        state: {
+          email: pathname?.split("/")[2],
+          password: formValue.password
+        }
+      })
+    }
+    if (isError) {
+      return
+    }
+  }, [isSuccess, isError, navigate, pathname, formValue.password])
+
 
   return (
     <div className="w-full xl:basis-6/12">
       <p className="text-sm text-secondary-color">Create new password</p>
       <h1 className="font-bold text-4xl mt-2">Reset Password</h1>
-      <form className="mt-10 w-full relative">
+      {isError && <div
+        className="break-words rounded-b-lg bg-danger-100 px-4 py-4 text-danger-700 mt-4">
+       {error?.response?.data.data?.error}
+      </div>}
+      <form className="mt-10 w-full relative" onSubmit={handleRegisterUser}>
       <div className="mt-10">
           <Input
             name="password"
             id="password"
             placeHolder="Password"
             type="text"
-            onChange={() => null}
+            onChange={handleChange}
             isAuthInput
             hasIcon
             Icon={LockIcon}
+            value={formValue.password}
+            hasError={!!passwordError}
           />
+          {!!passwordError && <p className="text-red-500 text-xs mt-1">{passwordError}</p>}
         </div>
         <div className="mt-10">
           <Input
-            name="password"
-            id="password"
+            name="confirm_password"
+            id="confirm_password"
             placeHolder="Confirm Password"
             type="text"
-            onChange={() => null}
+            onChange={handleChange}
             isAuthInput
             hasIcon
             Icon={LockIcon}
+            hasError={!!confirmPasswordError}
           />
+          {!!confirmPasswordError && <p className="text-red-500 text-xs mt-1">{confirmPasswordError}</p>}
         </div>
         <div className="mt-4
                       xl:mt-12">
           <Button variant="primary" onClick={() => null}>
-            Change Password
+          {isLoading ? <Loader /> : "Change Password"}
           </Button>
         </div>
         <div className="flex mt-4 items-center gap-4

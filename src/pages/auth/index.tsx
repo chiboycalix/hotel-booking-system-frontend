@@ -12,6 +12,7 @@ import Register from '../register';
 import ForgetPassword from '../forget-password';
 import ResetPassword from '../reset-password';
 import PasswordChanged from '../password-changed';
+import VerifyAccount from '../verify-account';
 
 
 const Auth = () => {
@@ -60,7 +61,8 @@ const Auth = () => {
             [ROUTES.REGISTER.split("/")[1]]: <Register />,
             [ROUTES.FORGET_PASSWORD.split("/")[1]]: <ForgetPassword />,
             [ROUTES.RESET_PASSWORD.split("/")[1]]: <ResetPassword />,
-            [ROUTES.PASSWORD_CHANGED.split("/")[1]]: <PasswordChanged />
+            [ROUTES.PASSWORD_CHANGED.split("/")[1]]: <PasswordChanged />,
+            [ROUTES.VERIFY_ACCOUNT.split("/")[1]]: <VerifyAccount />
           })
         }
       </div>

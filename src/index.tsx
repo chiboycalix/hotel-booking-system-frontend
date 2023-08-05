@@ -54,6 +54,10 @@ const router = createBrowserRouter([
     element: <Auth />,
   },
   {
+    path: ROUTES.VERIFY_ACCOUNT,
+    element: <Auth />,
+  },
+  {
     path: ROUTES.PRIVACY_NOTICE,
     element: <PrivacyNotice />
   },
