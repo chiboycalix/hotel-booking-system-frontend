@@ -30,7 +30,6 @@ const LoginPage = () => {
     }
   });
 
-  console.log({ error })
   const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     const { name, value } = event.currentTarget;
 
@@ -71,7 +70,7 @@ const LoginPage = () => {
 
   React.useEffect(() => {
     if (isSuccess) {
-      navigate(ROUTES.DASHBOARD)
+      navigate(ROUTES.HOME)
     }
     if (isError) {
       navigate(ROUTES.LOGIN)

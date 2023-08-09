@@ -77,7 +77,7 @@ const Register = () => {
 
   React.useEffect(() => {
     if (isSuccess) {
-      navigate(ROUTES.DASHBOARD)
+      navigate(ROUTES.HOME)
     }
     if (isError) {
       navigate(ROUTES.REGISTER)

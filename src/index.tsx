@@ -20,12 +20,12 @@ import Room from "./pages/dashboard/room";
 import Booking from "./pages/dashboard/booking";
 import Report from "./pages/dashboard/report";
 import Setting from "./pages/dashboard/setting";
-
+import {Protected} from "./components";
 
 const router = createBrowserRouter([
   {
     path: ROUTES.HOME,
-    element: <App />,
+    element: <Protected><App /></Protected>,
     loader: () => import("./App"),
     errorElement: <ErrorPage />,
     children: [
