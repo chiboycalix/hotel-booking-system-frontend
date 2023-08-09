@@ -100,7 +100,7 @@ const LoginPage = () => {
             type="text"
             onChange={handleChange}
             isAuthInput
-            hasIcon
+            hasIconPrefix
             Icon={EmailIcon}
             value={formValue.email}
             hasError={!!emailError}
@@ -116,7 +116,7 @@ const LoginPage = () => {
             type="text"
             onChange={handleChange}
             isAuthInput
-            hasIcon
+            hasIconPrefix
             Icon={LockIcon}
             value={formValue.password}
             hasError={!!passwordError}
@@ -164,7 +164,7 @@ const LoginPage = () => {
               onClick={() => null}
               variant="outline"
               Icon={GoogleIcon}
-              hasIcon
+              hasIconPrefix
               // type="button"
             >
               Google
@@ -175,7 +175,7 @@ const LoginPage = () => {
               onClick={() => null}
               variant="outline"
               Icon={FacebookIcon}
-              hasIcon
+              hasIconPrefix
             >
               Facebook
             </Button>

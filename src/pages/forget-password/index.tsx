@@ -73,7 +73,7 @@ const ForgetPassword = () => {
             type="text"
             onChange={handleChange}
             isAuthInput
-            hasIcon
+            hasIconPrefix
             Icon={EmailIcon}
           />
           {!!emailError && <p className="text-red-500 text-xs mt-1">{emailError}</p>}
@@ -99,7 +99,7 @@ const ForgetPassword = () => {
               onClick={() => null}
               variant="outline"
               Icon={GoogleIcon}
-              hasIcon
+              hasIconPrefix
             >
               Google
             </Button>
@@ -109,7 +109,7 @@ const ForgetPassword = () => {
               onClick={() => null}
               variant="outline"
               Icon={FacebookIcon}
-              hasIcon
+              hasIconPrefix
             >
               Facebook
             </Button>

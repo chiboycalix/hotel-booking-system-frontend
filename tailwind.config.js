@@ -21,8 +21,14 @@ module.exports = {
         'secondary-color': '#777777',
         'primary-color': '#32C0C0',
         'danger-color': '#E1341E',
-        'horizontal-line-color':'#E5E5E5'
+        'horizontal-line-color':'#E5E5E5',
+        'content-bg': '#F3F8F8',
+        'input-bg': '#F5F5F5'
       },
+      boxShadow: {
+        'sidebar': '0px 20px 20px 10px rgba(133, 133, 133, 0.10)',
+        'header': '0px 15px 10px 0px rgba(133, 133, 133, 0.05)'
+      }
     },
   },
   darkMode: "class",

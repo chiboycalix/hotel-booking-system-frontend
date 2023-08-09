@@ -9,5 +9,11 @@ export const ROUTES = {
   PASSWORD_CHANGED: '/password-changed',
   PRIVACY_NOTICE: '/privacy-policy',
   TERMS_OF_USE: '/terms-of-use',
-  VERIFY_ACCOUNT:'/verify-account/:email'
+  VERIFY_ACCOUNT:'/verify-account/:email',
+  LISTING: '/listing',
+  GUEST: '/guest',
+  ROOM: '/room',
+  BOOKING: '/booking',
+  REPORT: '/report',
+  SETTING: '/setting',
 }

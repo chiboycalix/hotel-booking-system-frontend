@@ -90,7 +90,7 @@ const ResetPassword = () => {
             type="text"
             onChange={handleChange}
             isAuthInput
-            hasIcon
+            hasIconPrefix
             Icon={LockIcon}
             value={formValue.password}
             hasError={!!passwordError}
@@ -105,7 +105,7 @@ const ResetPassword = () => {
             type="text"
             onChange={handleChange}
             isAuthInput
-            hasIcon
+            hasIconPrefix
             Icon={LockIcon}
             hasError={!!confirmPasswordError}
           />
@@ -132,7 +132,7 @@ const ResetPassword = () => {
               onClick={() => null}
               variant="outline"
               Icon={GoogleIcon}
-              hasIcon
+              hasIconPrefix
             >
               Google
             </Button>
@@ -142,7 +142,7 @@ const ResetPassword = () => {
               onClick={() => null}
               variant="outline"
               Icon={FacebookIcon}
-              hasIcon
+              hasIconPrefix
             >
               Facebook
             </Button>

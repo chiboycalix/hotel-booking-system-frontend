@@ -14,6 +14,12 @@ import Auth from "./pages/auth";
 import { ROUTES } from "./constants/routes";
 import PrivacyNotice from "./pages/privacy-notice";
 import TermsOfUse from "./pages/terms-of-use";
+import Listing from "./pages/dashboard/listing";
+import Guest from "./pages/dashboard/guest";
+import Room from "./pages/dashboard/room";
+import Booking from "./pages/dashboard/booking";
+import Report from "./pages/dashboard/report";
+import Setting from "./pages/dashboard/setting";
 
 
 const router = createBrowserRouter([
@@ -24,9 +30,33 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: ROUTES.DASHBOARD,
+        path: ROUTES.HOME,
         element: <Dashboard />,
       },
+      {
+        path: ROUTES.LISTING,
+        element: <Listing />
+      },
+      {
+        path: ROUTES.GUEST,
+        element: <Guest />
+      },
+      {
+        path: ROUTES.ROOM,
+        element: <Room />
+      },
+      {
+        path: ROUTES.BOOKING,
+        element: <Booking />
+      },
+      {
+        path: ROUTES.REPORT,
+        element: <Report />
+      },
+      {
+        path: ROUTES.SETTING,
+        element: <Setting />
+      }
     ],
   },
   {

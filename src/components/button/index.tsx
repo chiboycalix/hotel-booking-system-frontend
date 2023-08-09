@@ -5,15 +5,15 @@ interface ButtonProps {
   onClick: () => void;
   children: React.ReactNode;
   variant?: 'primary' | 'secondary' | 'danger' | 'outline';
-  hasIcon?: boolean;
+  hasIconPrefix?: boolean;
   Icon?: string;
   type?: "button" | "submit" | "reset" | undefined
 }
 
-const Button = ({ children, onClick, variant, hasIcon=false, Icon, type }: ButtonProps) => {
+const Button = ({ children, onClick, variant, hasIconPrefix=false, Icon, type }: ButtonProps) => {
   return (
     <button onClick={onClick} className={`${variant} rounded-full text-sm`} type={type}>
-      {hasIcon ? <img src={Icon} alt="" className='w-5 h-5 inline-block'/> : null } {children}
+      {hasIconPrefix ? <img src={Icon} alt="" className='w-5 h-5 inline-block'/> : null } {children}
     </button>
   )
 }

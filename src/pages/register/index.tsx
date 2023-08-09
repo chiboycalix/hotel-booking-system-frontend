@@ -101,7 +101,7 @@ const Register = () => {
             type="text"
             onChange={handleChange}
             isAuthInput
-            hasIcon
+            hasIconPrefix
             Icon={EmailIcon}
             value={formValue.email}
             hasError={!!emailError}
@@ -117,7 +117,7 @@ const Register = () => {
             type="text"
             onChange={handleChange}
             isAuthInput
-            hasIcon
+            hasIconPrefix
             Icon={LockIcon}
             value={formValue.password}
             hasError={!!passwordError}
@@ -132,7 +132,7 @@ const Register = () => {
             type="text"
             onChange={handleChange}
             isAuthInput
-            hasIcon
+            hasIconPrefix
             Icon={LockIcon}
             hasError={!!confirmPasswordError}
           />
@@ -173,7 +173,7 @@ const Register = () => {
               onClick={() => null}
               variant="outline"
               Icon={GoogleIcon}
-              hasIcon
+              hasIconPrefix
             >
               Google
             </Button>
@@ -183,7 +183,7 @@ const Register = () => {
               onClick={() => null}
               variant="outline"
               Icon={FacebookIcon}
-              hasIcon
+              hasIconPrefix
             >
               Facebook
             </Button>
