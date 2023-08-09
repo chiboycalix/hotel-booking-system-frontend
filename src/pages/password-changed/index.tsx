@@ -16,7 +16,7 @@ const PasswordChanged = () => {
     })
   }
   return (
-    <div className="w-full xl:basis-6/12 relative">
+    <div className="w-full xl:basis-6/12 relative mt-40 md:mt-10">
       <p className="text-sm text-secondary-color">Password changed successfully</p>
       <h1 className="font-bold text-4xl mt-2">Password Changed</h1>
       {isError && <div
@@ -27,7 +27,7 @@ const PasswordChanged = () => {
         We have sent a verification link to your
         email address
         <span className="text-danger-color font-bold inline-block ml-1">
-          {location.state.email}
+          {location?.state?.email}
         </span>
       </p>
 
@@ -42,9 +42,7 @@ const PasswordChanged = () => {
       
       
       {
-         isSuccess && <div className="mt-40 absolute w-full top-full left-0
-                         xl:-ml-80
-                         2xl:mt-96">
+         isSuccess && <div className="mt-20 absolute w-full top-full left-0 xl:mt-20">
           <Button variant="danger" onClick={() => null}>
             Verification Link Sent Successfully
           </Button>

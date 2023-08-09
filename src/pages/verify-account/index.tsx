@@ -38,7 +38,7 @@ const VerifyAccount = () => {
       <div className="mt-4
                       xl:mt-12">
         <Button variant="primary" onClick={() => navigate(ROUTES.LOGIN)}>
-         {isLoading ? "verifying user": "Back to Login"}
+         {isLoading ? "Verifying user ...": "Back to Login"}
         </Button>
       </div>
     </div>

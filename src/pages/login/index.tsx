@@ -9,7 +9,7 @@ import FacebookIcon from "../../assets/images/auth/facebook.svg";
 
 import { Button, Divider, Input, Loader } from "../../components";
 import { ROUTES } from "../../constants/routes";
-import { IUseAuthMutation, login } from "../../api/auth";
+import { IUseAuthMutation, login, googleLogin } from "../../api/auth";
 import { generalHelpers } from "../../utils";
 
 
@@ -24,7 +24,13 @@ const LoginPage = () => {
       localStorage.setItem("hotelBookSystemJWT", data.data.token)
     }
   });
-console.log({ error })
+  const { mutate: mutateGoogle }: any = useMutation({
+    mutationFn: googleLogin, onSuccess({ data }) {
+      console.log({ data })
+    }
+  });
+
+  console.log({ error })
   const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     const { name, value } = event.currentTarget;
 
@@ -71,6 +77,11 @@ console.log({ error })
       navigate(ROUTES.LOGIN)
     }
   }, [isSuccess, isError, navigate])
+
+  const handleGoogleSignIn = (e: React.FormEvent) => {
+    e.preventDefault()
+    mutateGoogle()
+  }
 
   return (
     <div className="w-full xl:basis-6/12">
@@ -134,7 +145,19 @@ console.log({ error })
           <Divider />
         </div>
 
-        <div className="mt-4 
+
+        <div className="text-center mt-4
+                          xl:mt-8">
+          <p className="text-sm">
+            Don't have an account?{" "}
+            <span className="text-danger-color font-bold inline-block ml-1">
+              <a href={ROUTES.REGISTER}>Sign Up</a>
+            </span>
+          </p>
+        </div>
+      </form>
+      <form onSubmit={handleGoogleSignIn}>
+      <div className="mt-4 
                           xl:flex xl:justify-center xl:items-center xl:gap-4 xl:mt-12">
           <div className="xl:basis-6/12">
             <Button
@@ -142,6 +165,7 @@ console.log({ error })
               variant="outline"
               Icon={GoogleIcon}
               hasIcon
+              // type="button"
             >
               Google
             </Button>
@@ -157,16 +181,8 @@ console.log({ error })
             </Button>
           </div>
         </div>
-        <div className="text-center mt-4
-                          xl:mt-8">
-          <p className="text-sm">
-            Don't have an account?{" "}
-            <span className="text-danger-color font-bold inline-block ml-1">
-              <a href={ROUTES.REGISTER}>Sign Up</a>
-            </span>
-          </p>
-        </div>
       </form>
+      
     </div>
   );
 };

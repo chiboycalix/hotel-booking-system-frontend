@@ -42,3 +42,10 @@ export const resetPassword = async (resetPasswordPayload: IAuthPayload) => {
 export const verifyAccount = async (verifyAccountPayload: IAuthPayload) => {
   return axios.post(`${configs.baseURL}/auth/verify-account`, verifyAccountPayload)
 }
+
+export const googleLogin = async () => {
+  return axios.get(`${configs.baseURL}/auth/google-signin`)
+}
+// export const googleLogin = async () => {
+//   return axios.get(`https://cors-anywhere.herokuapp.com/${configs.baseURL}/auth/google-signin`)
+// }
