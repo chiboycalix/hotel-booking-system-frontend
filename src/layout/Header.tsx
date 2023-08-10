@@ -27,7 +27,7 @@ const Header = () => {
     navigate("/login")
   }
   return (
-    <div className="w-full h-20 bg-white shadow-header flex items-center justify-between px-4 gap-4 ">
+    <div className="h-20 bg-white shadow-header flex items-center justify-between px-4 gap-4 fixed z-20" style={{width:"86.5%"}}>
       <div className='basis-1/12'>
         <p className='sm:hidden'>Dash</p>
         <p className='hidden sm:inline-block'>Dashboard</p>

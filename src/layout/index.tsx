@@ -11,12 +11,16 @@ const Layout = () => {
   useRedirect(ROUTES.DASHBOARD, ROUTES.HOME)
   // const { showWarningMessage, setShowWarningMessage} = useInactivity({ warnTime: WARN_TIME, logoutTime: LOGOUT_TIME })
   return (
-    <div className="flex relative">
-      <Sidebar />
-      <div className="w-screen">
-        <Header />
-        
-        <div className="bg-content-bg h-5/6 p-4">
+    <div className="flex relative w-screen">
+      <div className="fixed top-0 left-0 w-52">
+        <Sidebar />
+      </div>
+      <div className="w-full">
+        <div className="relative ml-52">
+          <Header />
+        </div>
+
+        <div className="bg-content-bg p-4 ml-52 relative mt-20">
           <Outlet />
         </div>
       </div>

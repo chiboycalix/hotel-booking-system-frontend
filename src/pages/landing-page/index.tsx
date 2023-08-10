@@ -60,7 +60,7 @@ const LandingPage = () => {
           <img
             src={landing}
             className="block w-full h-screen"
-            alt="Motorbike Smoke"
+            alt="Lamding page"
           />
           <div className="overlay text-white absolute top-0 left-0 w-full h-full opacity-50 flex flex-col items-center justify-center"></div>
           <div className="w-screen h-screen absolute top-0 left-0 flex flex-col items-center justify-center text-white">

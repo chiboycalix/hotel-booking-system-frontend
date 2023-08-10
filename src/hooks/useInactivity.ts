@@ -26,11 +26,7 @@ export const useInactivity = ({ warnTime, logoutTime }: InactivityProps) => {
     if (logoutTimeout) {
       clearTimeout(logoutTimeout);
     }
-  }
-, [logoutTimeout, warnTimeout])
-
-
-
+  }, [logoutTimeout, warnTimeout])
 
   const warn = () => {
     setShowWarningMessage(true);

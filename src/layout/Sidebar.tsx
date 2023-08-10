@@ -85,13 +85,13 @@ const routes: Route[] = [
 const Sidebar = () => {
   const { pathname } = useLocation();
   return (
-    <div className="w-12 min-h-screen shadow-sidebar px-4
-                    sm:w-52">
+    <div className="bg-white w-12 min-h-screen shadow-sidebar px-4
+                    sm:w-full">
       <div className='w-full h-20 bg-white flex justify-center items-center cursor-pointer'>
         <img src={Logo} alt="Logo" className='w-5' />
       </div>
       <Divider />
-      <ul className='mt-10'>
+      <ul className='mt-10 w-full'>
         {
           routes.map((route) => {
             return <li key={route.id} className='mb-14 cursor-pointer'>
