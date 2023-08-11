@@ -11,6 +11,7 @@ export const ROUTES = {
   TERMS_OF_USE: '/terms-of-use',
   VERIFY_ACCOUNT:'/verify-account/:email',
   LISTING: '/listing',
+  UPDATE_LISTING: '/listing/edit',
   GUEST: '/guest',
   ROOM: '/room',
   BOOKING: '/booking',

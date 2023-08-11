@@ -96,7 +96,7 @@ const Sidebar = () => {
           routes.map((route) => {
             return <li key={route.id} className='mb-14 cursor-pointer'>
               <NavLink to={route.path} 
-                className={`cursor-pointer flex items-center gap-4 ${pathname === route.path ? 'text-primary-color': ''}`}><img src={pathname === route.path ? route.iconColored : route.icon } alt={pathname === route.path ? route.iconColored : route.icon} className='w-5' />
+                className={`cursor-pointer flex items-center gap-4 ${pathname.split('/')[1] === route.path.split('/')[1] ? 'text-primary-color': ''}`}><img src={pathname === route.path ? route.iconColored : route.icon } alt={pathname === route.path ? route.iconColored : route.icon} className='w-5' />
                 <span className="hidden
                                  sm:inline-flex">
                   {route.name}

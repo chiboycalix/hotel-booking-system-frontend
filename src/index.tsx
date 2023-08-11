@@ -21,6 +21,7 @@ import Booking from "./pages/dashboard/booking";
 import Report from "./pages/dashboard/report";
 import Setting from "./pages/dashboard/setting";
 import {Protected} from "./components";
+import UpdateListing from "./pages/dashboard/listing/update";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: ROUTES.LISTING,
         element: <Listing />
+      },
+      {
+        path: ROUTES.UPDATE_LISTING,
+        element: <UpdateListing />
       },
       {
         path: ROUTES.GUEST,

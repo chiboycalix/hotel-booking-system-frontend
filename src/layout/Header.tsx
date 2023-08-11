@@ -33,7 +33,7 @@ const Header = () => {
         <p className='hidden sm:inline-block'>Dashboard</p>
       </div>
       <div className='basis-10/12 sm:2/4'>
-        <Input placeHolder="Search here" onChange={() => null} type="text" name="search" id="search" Icon={SearchIcon} hasIconPostfix />
+        <Input isSearchInput placeHolder="Search here" onChange={() => null} type="text" name="search" id="search" Icon={SearchIcon} hasIconPostfix />
       </div>
       <div className='basis-1/12 flex justify-end relative'>
         <img src={MoreIcon} alt={MoreIcon} onClick={handleOpenMenu} className='cursor-pointer' />

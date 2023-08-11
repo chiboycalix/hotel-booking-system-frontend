@@ -1,7 +1,7 @@
 import React from "react";
 
 interface InputProps {
-  Icon: any;
+  Icon?: any;
   onChange: (event: any) => void;
   placeHolder: string;
   type: string;
@@ -12,10 +12,11 @@ interface InputProps {
   hasIconPostfix?: boolean;
   value?: string;
   hasError?: boolean;
+  isSearchInput?: boolean;
 }
-const Input = ({ Icon, onChange, type, placeHolder, name, id, value, isAuthInput=false, hasIconPrefix=false, hasIconPostfix=false, hasError=false }: InputProps) => {
+const Input = ({ Icon, onChange, type, placeHolder, name, id, value, isAuthInput=false, hasIconPrefix=false, hasIconPostfix=false, hasError=false, isSearchInput=false }: InputProps) => {
   const authInputClass = `w-full border-b ${hasError ? 'border-red-500': 'border-horizontal-line-color'} focus:border-primary-color focus:outline-none pl-10 pb-4 placeholder:text-secondary-text-color placeholder:text-sm`
-  const otherInputClass = `w-full bg-input-bg py-2 focus:outline-none px-5 rounded-3xl placeholder:text-xs placeholder:text-secondary-text-color`
+  const otherInputClass = `${`w-full ${isSearchInput ? 'bg-input-bg': 'bg-white'} py-2 focus:outline-none px-5 rounded-3xl placeholder:text-xs text-secondary`}`
   return (
     <div className="w-full flex relative">
       { hasIconPrefix ? <img src={Icon} alt={name} className="absolute" /> : null }

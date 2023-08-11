@@ -11,7 +11,7 @@ interface AxiosError {
   }
 }
 export interface IUseListingMutation {
-  mutate: (payload: any) => void;
+  mutate: (payload: {}) => void;
   isLoading: boolean
   isError: boolean
   error: AxiosError | null
