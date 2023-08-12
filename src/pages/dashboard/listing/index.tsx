@@ -24,7 +24,6 @@ const Listing = () => {
   }, [mutate])
 
   const handleEditListing = (listing: IListing) => {
-    console.log(listing, "listing")
     navigate(`${ROUTES.UPDATE_LISTING}`, {
       state: {
         listing: listing
@@ -39,7 +38,7 @@ const Listing = () => {
           <img src={ListViewIcon} alt={ListViewIcon} className='w-5' />
           <img src={GridViewIcon} alt={GridViewIcon} className='w-5' />
         </div>
-        <div className='basis-2/12'>
+        <div className='basis-6/12 lg:basis-2/12 md:basis-4/12'>
           <Button onClick={() => null} variant="primary" Icon={PlusIcon} hasIconPrefix>
             Add new Room
           </Button>
@@ -47,7 +46,7 @@ const Listing = () => {
       </div>
       <div className='w-full mt-8'>
         { !isLoading && !isError && listings?.map((listing: IListing) => {
-          return  <ListingCard key={listing.roomImage} listing={listing}  handleEditListing={handleEditListing} />
+          return <ListingCard key={listing.roomImage} listing={listing}  handleEditListing={handleEditListing} />
         })}
       </div>
     </div>

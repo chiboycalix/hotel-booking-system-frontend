@@ -13,10 +13,10 @@ const ListingCard = ({ listing, handleEditListing }: IListingCardProps) => {
   return (
     <div className='flex shadow-listing-card p-4 rounded border hover:border-primary-color cursor-pointer mb-10'>
       <div className='flex gap-4 basis-10/12'>
-        <div className='w-96 bg-primary-color h-52 rounded'>
+        <div className='max-w-96 bg-primary-color h-52 rounded'>
           <img
             src={listing.roomImage}
-            className="block w-96 h-52 object-cover rounded"
+            className="block w-full h-52 object-cover rounded"
             alt="Listing pic"
           />
         </div>
