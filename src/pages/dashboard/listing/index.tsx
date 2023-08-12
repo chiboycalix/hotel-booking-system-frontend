@@ -34,11 +34,11 @@ const Listing = () => {
   return (
     <div>
       <div className='flex justify-between'>
-        <div className='flex gap-4 basis-10/12'>
+        <div className='flex gap-4 basis-5/12 md:basis-10/12'>
           <img src={ListViewIcon} alt={ListViewIcon} className='w-5' />
           <img src={GridViewIcon} alt={GridViewIcon} className='w-5' />
         </div>
-        <div className='basis-6/12 lg:basis-2/12 md:basis-4/12'>
+        <div className='basis-7/12 lg:basis-2/12 md:basis-4/12'>
           <Button onClick={() => null} variant="primary" Icon={PlusIcon} hasIconPrefix>
             Add new Room
           </Button>

@@ -16,11 +16,11 @@ const Layout = () => {
         <Sidebar />
       </div>
       <div className="w-full">
-        <div className="relative ml-52">
+        <div className="relative ml-12 sm:ml-52">
           <Header />
         </div>
 
-        <div className="bg-content-bg p-4 ml-52 relative mt-20">
+        <div className="bg-content-bg p-4 ml-12 sm:ml-52 relative mt-20">
           <Outlet />
         </div>
       </div>
