@@ -11,7 +11,7 @@ interface IListingCardProps {
 
 const ListingCard = ({ listing, handleEditListing }: IListingCardProps) => {
   return (
-    <div className='flex md:flex-row flex-col shadow-listing-card p-4 rounded border hover:border-primary-color cursor-pointer mb-10'>
+    <div className='flex md:flex-row flex-col shadow-listing-card p-4 rounded border-2 hover:border-primary-color cursor-pointer mb-10'>
       <div className='flex gap-4 basis-12/12 sm:basis-10/12 md:flex-row flex-col'>
         <div className='w-full h-full lg:w-96 bg-primary-color lg:h-52 rounded'>
           <img

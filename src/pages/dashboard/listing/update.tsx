@@ -79,11 +79,11 @@ const UpdateListing = () => {
   }
 
   return (
-    <div className='w-full px-10 h-fit pb-12'>
+    <div className='w-full px-2 sm:px-10 h-fit pb-12'>
       <p className='mt-5 font-bold'>Edit Listing:</p>
       
       <form className='w-full flex flex-col mt-10' onSubmit={handleFormSubmit}>
-        <div className={`w-full h-96 flex flex-col justify-center items-center mb-6 rounded relative`}
+        <div className={`w-full h-32 min-[375px]:h-48 sm:h-72 md:h-96 flex flex-col justify-center items-center mb-6 rounded relative`}
           style={{ backgroundImage: `url(${imageSrc ? imageSrc : location.state.listing.roomImage})`, backgroundRepeat: 'no-repeat', backgroundSize: '100%', backgroundPosition: 'center', objectFit: 'cover' }}>
           <div className='absolute w-full h-full top-0 left-0 bg-black opacity-20'></div>
           <input type="file" className='absolute hidden cursor-pointer' ref={fileInputRef} onChange={handleUploadImage} name="roomImage" />
@@ -97,7 +97,7 @@ const UpdateListing = () => {
         {successMessage}
       </div>}
 
-        <div className='flex w-full gap-4 mb-10'>
+        <div className='flex flex-col sm:flex-row w-full gap-4 mb-10'>
           <div className='basis-6/12'>
             <div className='mb-2'>
               <label htmlFor="roomName" className='text-sm font-bold'>Room Name:</label>
@@ -112,7 +112,7 @@ const UpdateListing = () => {
           </div>
         </div>
 
-        <div className='flex w-full gap-4'>
+        <div className='flex flex-col sm:flex-row w-full gap-4'>
           <div className='basis-6/12'>
             <div className='mb-2'>
               <label htmlFor="roomBedType" className='text-sm font-bold'>Bed Type:</label>
