@@ -1,15 +1,29 @@
 import React from 'react'
 import EditIcon from '../../../assets/images/edit-icon.svg'
 import DeleteIcon from '../../../assets/images/delete-icon.svg'
-import { Button } from '../../../components'
+import WarnIconRed from '../../../assets/images/danger-icon.svg'
+import { Button, Loader, Modal } from '../../../components'
 import { IListing } from '../../../interface/listing'
+
 
 interface IListingCardProps {
   listing: IListing;
   handleEditListing: (listing: IListing) => void
+  handleDeleteListing: (listing: IListing) => void
+  setIsVisible: (isVisible: boolean) => void
+  isDeleteListingLoading: boolean
+  isDeleteListingError: boolean
+  isDeleteListingSuccess: boolean
+  isVisible: boolean
+  successMessage: string
+  deleteListingError: any
+
 }
 
-const ListingCard = ({ listing, handleEditListing }: IListingCardProps) => {
+const ListingCard = (props: IListingCardProps) => {
+  const { listing, isVisible, setIsVisible, successMessage, deleteListingError, handleEditListing, handleDeleteListing, isDeleteListingLoading, isDeleteListingError, isDeleteListingSuccess } = props
+
+
   return (
     <div className='flex md:flex-row flex-col shadow-listing-card p-4 rounded border-2 hover:border-primary-color cursor-pointer mb-10'>
       <div className='flex gap-4 basis-12/12 sm:basis-10/12 md:flex-row flex-col'>
@@ -34,7 +48,7 @@ const ListingCard = ({ listing, handleEditListing }: IListingCardProps) => {
             <img src={EditIcon} alt={EditIcon} className='w-4' />
             <p className='text-success-color text-sm'>Edit</p>
           </div>
-          <div className='flex gap-2 cursor-pointer'>
+          <div className='flex gap-2 cursor-pointer' onClick={() => setIsVisible(!isVisible)}>
             <img src={DeleteIcon} alt={DeleteIcon} className='w-3' />
             <p className='text-sm text-red-600'>Delete</p>
           </div>
@@ -45,6 +59,24 @@ const ListingCard = ({ listing, handleEditListing }: IListingCardProps) => {
           </Button>
         </div>
       </div>
+      <Modal isVisible={isVisible} onClose={() => setIsVisible(!isVisible)}>
+        <div className='flex flex-col justify-center items-center px-20 py-4 max-[490px]:px-10 max-[400px]:px-2 max-[400px]:py-2'>
+          {isDeleteListingError && <div
+            className="break-words rounded-b-lg bg-danger-100 px-4 py-4 text-danger-700 mb-4 w-full text-center">
+            {deleteListingError?.response?.data.data?.error}
+          </div>}
+          {isDeleteListingSuccess && <div className="break-words rounded-b-lg bg-success-100 px-4 py-4 text-success-700 mt-4">
+            {successMessage}
+          </div>}
+          <img src={WarnIconRed} alt={WarnIconRed} className='w-14' />
+          <p className='font-bold text-md mt-6'>Delete This Room ?</p>
+          <p className='mt-2 text-xs text-secondary'>Are you sure, You want to delete this Room?</p>
+          <div className='w-52 flex gap-4 mt-8'>
+            <Button onClick={() => handleDeleteListing(listing)} variant='danger'>{isDeleteListingLoading ? <Loader /> : 'Yes'}</Button>
+            <Button onClick={() => setIsVisible(!isVisible)} variant='primary'>No</Button>
+          </div>
+        </div>
+      </Modal>
     </div>
   )
 }

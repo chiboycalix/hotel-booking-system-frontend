@@ -24,10 +24,14 @@ export const getAllListings = async () => {
 };
 
 export const updateListing = async ({ id, ...rest }: IListing) => {
-  console.log({rest})
   return axios.put(`${configs.baseURL}/listings/${id}`, rest, {
     headers: {
       'Content-Type': 'multipart/form-data',
     },
   });
 }
+
+export const deleteListing = async ({ id }: IListing) => {
+  console.log(id, "hi")
+  return axios.delete(`${configs.baseURL}/listings/${id}`);
+};
