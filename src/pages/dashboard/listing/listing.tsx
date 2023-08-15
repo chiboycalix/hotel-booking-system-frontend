@@ -13,15 +13,12 @@ interface IListingCardProps {
   setIsVisible: (isVisible: boolean) => void
   isDeleteListingLoading: boolean
   isDeleteListingError: boolean
-  isDeleteListingSuccess: boolean
   isVisible: boolean
-  successMessage: string
   deleteListingError: any
-
 }
 
 const ListingCard = (props: IListingCardProps) => {
-  const { listing, isVisible, setIsVisible, successMessage, deleteListingError, handleEditListing, handleDeleteListing, isDeleteListingLoading, isDeleteListingError, isDeleteListingSuccess } = props
+  const { listing, isVisible, setIsVisible, deleteListingError, handleEditListing, handleDeleteListing, isDeleteListingLoading, isDeleteListingError } = props
 
 
   return (
@@ -65,9 +62,9 @@ const ListingCard = (props: IListingCardProps) => {
             className="break-words rounded-b-lg bg-danger-100 px-4 py-4 text-danger-700 mb-4 w-full text-center">
             {deleteListingError?.response?.data.data?.error}
           </div>}
-          {isDeleteListingSuccess && <div className="break-words rounded-b-lg bg-success-100 px-4 py-4 text-success-700 mt-4">
+          {/* {isDeleteListingSuccess && <div className="break-words rounded-b-lg bg-success-100 px-4 py-4 text-success-700 mt-4">
             {successMessage}
-          </div>}
+          </div>} */}
           <img src={WarnIconRed} alt={WarnIconRed} className='w-14' />
           <p className='font-bold text-md mt-6'>Delete This Room ?</p>
           <p className='mt-2 text-xs text-secondary'>Are you sure, You want to delete this Room?</p>

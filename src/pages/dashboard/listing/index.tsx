@@ -14,7 +14,6 @@ const Listing = () => {
   const navigate = useNavigate()
   const [listings, setListings] = React.useState<IListing[]>([])
   const [isVisible, setIsVisible] = React.useState(false)
-  const [successMessage, setSuccessMessage] = React.useState("")
 
   const { mutate, isLoading, isError }: IUseListingMutation = useMutation({
     mutationFn: getAllListings, onSuccess({ data }) {
@@ -24,13 +23,12 @@ const Listing = () => {
   const { mutate: deleteListingMutation, isLoading: isDeleteListingLoading, isError: isDeleteListingError, isSuccess: isDeleteListingSuccess, error: deleteListingError }: any = useMutation({
     mutationFn: deleteListing, onSuccess({ data }) {
       setListings(data.data.listings)
-      setSuccessMessage(data.message)
     }
   });
 
   React.useEffect(() => {
     mutate({})
-  }, [mutate])
+  }, [mutate, isDeleteListingSuccess])
 
   const handleEditListing = (listing: IListing) => {
     navigate(`${ROUTES.UPDATE_LISTING}`, {
@@ -42,10 +40,7 @@ const Listing = () => {
 
   const handleDeleteListing = (listing: IListing) => {
     deleteListingMutation({ ...listing })
-    if (isDeleteListingSuccess) {
-      // setIsVisible(!isVisible)
-      mutate({})
-    }
+    setIsVisible(false)
   }
   return (
     <div className='min-h-screen'>
@@ -69,10 +64,8 @@ const Listing = () => {
             handleDeleteListing={handleDeleteListing}
             isDeleteListingLoading={isDeleteListingLoading}
             isDeleteListingError={isDeleteListingError}
-            isDeleteListingSuccess={isDeleteListingSuccess}
             isVisible={isVisible}
             setIsVisible={setIsVisible}
-            successMessage={successMessage}
             deleteListingError={deleteListingError}
           />
         })}

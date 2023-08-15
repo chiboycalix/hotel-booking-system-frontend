@@ -32,6 +32,5 @@ export const updateListing = async ({ id, ...rest }: IListing) => {
 }
 
 export const deleteListing = async ({ id }: IListing) => {
-  console.log(id, "hi")
   return axios.delete(`${configs.baseURL}/listings/${id}`);
 };
