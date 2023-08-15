@@ -27,7 +27,7 @@ const Header = () => {
     navigate("/login")
   }
   return (
-    <div className="h-20 bg-white shadow-header flex items-center justify-between px-4 gap-4 fixed z-99000 sm:w-[calc(100%-13rem)] w-[calc(100%-3rem)]">
+    <div className="h-20 bg-white shadow-header flex items-center justify-between px-4 gap-4 fixed z-10 sm:w-[calc(100%-13rem)] w-[calc(100%-3rem)]">
       <div className='basis-1/12'>
         <p className='sm:hidden'>Dash</p>
         <p className='hidden sm:inline-block'>Dashboard</p>
