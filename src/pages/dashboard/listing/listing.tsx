@@ -4,6 +4,8 @@ import DeleteIcon from '../../../assets/images/delete-icon.svg'
 import WarnIconRed from '../../../assets/images/danger-icon.svg'
 import { Button, Loader, Modal } from '../../../components'
 import { IListing } from '../../../interface/listing'
+import { useNavigate } from 'react-router-dom'
+import { ROUTES } from '../../../constants/routes'
 
 
 interface IListingCardProps {
@@ -18,8 +20,15 @@ interface IListingCardProps {
 }
 
 const ListingCard = (props: IListingCardProps) => {
+  const navigate = useNavigate()
   const { listing, isVisible, setIsVisible, deleteListingError, handleEditListing, handleDeleteListing, isDeleteListingLoading, isDeleteListingError } = props
-
+  const handleBookListing = (listing: IListing) => {
+    navigate(ROUTES.BOOK_LISTING,{
+      state: {
+        listing
+      }
+    })
+  }
 
   return (
     <div className='flex md:flex-row flex-col shadow-listing-card p-4 rounded border-2 hover:border-primary-color cursor-pointer mb-10'>
@@ -51,7 +60,7 @@ const ListingCard = (props: IListingCardProps) => {
           </div>
         </div>
         <div className='sm:w-40 w-32'>
-          <Button onClick={() => null} variant="primary">
+          <Button onClick={() => handleBookListing(listing)} variant="primary">
             Book now
           </Button>
         </div>

@@ -50,7 +50,7 @@ const Listing = () => {
           <img src={GridViewIcon} alt={GridViewIcon} className='w-5' />
         </div>
         <div className='basis-7/12 lg:basis-2/12 md:basis-4/12'>
-          <Button onClick={() => null} variant="primary" Icon={PlusIcon} hasIconPrefix>
+          <Button onClick={() => navigate(ROUTES.CREATE_LISTING)} variant="primary" Icon={PlusIcon} hasIconPrefix>
             Add new Room
           </Button>
         </div>

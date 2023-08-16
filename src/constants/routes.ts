@@ -12,6 +12,8 @@ export const ROUTES = {
   VERIFY_ACCOUNT:'/verify-account/:email',
   LISTING: '/listing',
   UPDATE_LISTING: '/listing/edit',
+  CREATE_LISTING: '/listing/create',
+  BOOK_LISTING: '/listing/book',
   GUEST: '/guest',
   ROOM: '/room',
   BOOKING: '/booking',

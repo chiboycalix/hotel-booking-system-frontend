@@ -6,12 +6,13 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import "./index.css";
+import { ROUTES } from "./constants/routes";
+import { Protected } from "./components";
 import App from "./App";
 import ErrorPage from "./pages/error-page";
 import Dashboard from "./pages/dashboard";
 import LandingPage from "./pages/landing-page";
 import Auth from "./pages/auth";
-import { ROUTES } from "./constants/routes";
 import PrivacyNotice from "./pages/privacy-notice";
 import TermsOfUse from "./pages/terms-of-use";
 import Listing from "./pages/dashboard/listing";
@@ -20,8 +21,9 @@ import Room from "./pages/dashboard/room";
 import Booking from "./pages/dashboard/booking";
 import Report from "./pages/dashboard/report";
 import Setting from "./pages/dashboard/setting";
-import {Protected} from "./components";
 import UpdateListing from "./pages/dashboard/listing/update";
+import CreateListing from "./pages/dashboard/listing/create";
+import BookListing from "./pages/dashboard/listing/book-listing";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +43,14 @@ const router = createBrowserRouter([
       {
         path: ROUTES.UPDATE_LISTING,
         element: <UpdateListing />
+      },
+      {
+        path: ROUTES.CREATE_LISTING,
+        element: <CreateListing />
+      },
+      {
+        path: ROUTES.BOOK_LISTING,
+        element: <BookListing />
       },
       {
         path: ROUTES.GUEST,

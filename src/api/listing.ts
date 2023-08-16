@@ -31,6 +31,15 @@ export const updateListing = async ({ id, ...rest }: IListing) => {
   });
 }
 
+export const createListing = async (payload: IListing) => {
+  return axios.post(`${configs.baseURL}/listings`, payload, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    },
+  });
+}
+
+
 export const deleteListing = async ({ id }: IListing) => {
   return axios.delete(`${configs.baseURL}/listings/${id}`);
 };
