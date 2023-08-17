@@ -21,8 +21,8 @@ const BookListing = () => {
           <p className='text-center text-md text-secondary'>#SC-28-2023</p>
         </div>
 
-        <ul className='flex flex-col mt-10 w-full px-14'>
-          <li className='flex flex-col items-center gap-4 mb-8 min-[440px]:flex-row min-[440px]:mb-4'>
+        <ul className='flex flex-col mt-10 w-full px-8'>
+          <li className='flex flex-col items-center gap-2 mb-8 min-[440px]:flex-row min-[440px]:mb-4'>
             <div className='w-8 h-8 bg-primary-color rounded-full flex justify-center items-center'>
               <img src={MailIcon} alt={MailIcon} className='w-3' />
             </div>
@@ -31,7 +31,7 @@ const BookListing = () => {
             </div>
           </li>
 
-          <li className='flex flex-col items-center gap-4 mb-8 min-[440px]:flex-row min-[440px]:mb-4'>
+          <li className='flex flex-col items-center gap-2 mb-8 min-[440px]:flex-row min-[440px]:mb-4'>
             <div className='w-8 h-8 bg-primary-color rounded-full flex justify-center items-center'>
               <img src={PhoneIcon} alt={PhoneIcon} className='w-3' />
             </div>
@@ -40,7 +40,7 @@ const BookListing = () => {
             </div>
           </li>
 
-          <li className='flex flex-col items-center gap-4 mb-8 min-[440px]:flex-row min-[440px]:mb-4'>
+          <li className='flex flex-col items-center gap-2 mb-8 min-[440px]:flex-row min-[440px]:mb-4'>
             <div className='w-8 h-8 bg-primary-color rounded-full flex justify-center items-center'>
               <img src={LocationIcon} alt={LocationIcon} className='w-3' />
             </div>
