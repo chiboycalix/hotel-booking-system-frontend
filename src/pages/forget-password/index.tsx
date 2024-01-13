@@ -58,7 +58,7 @@ const ForgetPassword = () => {
         you will receive a verification link</p>
       {isError && <div
         className="break-words rounded-b-lg bg-danger-100 px-4 py-4 text-danger-700 mt-4">
-        {error?.response?.data.data?.error}
+        {error?.response?.data.message}
 
       </div>}
       {isSuccess && <div className="break-words rounded-b-lg bg-success-100 px-4 py-4 text-success-700 mt-4">

@@ -4,15 +4,15 @@ import { configs } from "../configs";
 interface AxiosError {
   response: {
     data: {
-      data: {
-        error: string
-      }
+      message: string
     }
   }
 }
 interface IAuthPayload {
   email?: string;
   password?: string;
+  firstName?: string;
+  lastName?: string;
 }
 
 export interface IUseAuthMutation {
@@ -44,8 +44,5 @@ export const verifyAccount = async (verifyAccountPayload: IAuthPayload) => {
 }
 
 export const googleLogin = async () => {
-  return axios.get(`${configs.baseURL}/auth/google-signin`)
+  return axios.get(`${configs.baseURL}/auth/login/google`)
 }
-// export const googleLogin = async () => {
-//   return axios.get(`https://cors-anywhere.herokuapp.com/${configs.baseURL}/auth/google-signin`)
-// }

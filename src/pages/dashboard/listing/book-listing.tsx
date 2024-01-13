@@ -7,7 +7,7 @@ import { Button } from '../../../components';
 
 const BookListing = () => {
   const location = useLocation();
-  const { user } = useDecodeJwt()
+  const { user } = useDecodeJwt();
   console.log({ user })
   console.log(location.state, "loc")
   return (

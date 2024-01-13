@@ -79,7 +79,7 @@ const ResetPassword = () => {
       <h1 className="font-bold text-4xl mt-2">Reset Password</h1>
       {isError && <div
         className="break-words rounded-b-lg bg-danger-100 px-4 py-4 text-danger-700 mt-4">
-       {error?.response?.data.data?.error}
+       {error?.response?.data.message}
       </div>}
       <form className="mt-10 w-full relative" onSubmit={handleRegisterUser}>
       <div className="mt-10">

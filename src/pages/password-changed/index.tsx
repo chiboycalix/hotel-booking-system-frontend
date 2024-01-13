@@ -21,7 +21,7 @@ const PasswordChanged = () => {
       <h1 className="font-bold text-4xl mt-2">Password Changed</h1>
       {isError && <div
         className="break-words rounded-b-lg bg-danger-100 px-4 py-4 text-danger-700 mt-4">
-       {error?.response?.data.data?.error}
+       {error?.response?.data.message}
       </div>}
       <p className='text-sm text-secondary-color mt-8 xl:w-3/4'>
         We have sent a verification link to your
