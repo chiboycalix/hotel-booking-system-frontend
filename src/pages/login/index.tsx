@@ -79,7 +79,6 @@ const LoginPage = () => {
 
   const handleGoogleSignIn = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('hi')
     mutateGoogle({})
   }
 

@@ -4,7 +4,7 @@ export const ROUTES = {
   LOGIN: '/login',
   LANDING: '/landing',
   REGISTER:'/register',
-  FORGET_PASSWORD: '/forget-password',
+  FORGET_PASSWORD: '/forgot-password',
   RESET_PASSWORD: '/reset-password/:email',
   PASSWORD_CHANGED: '/password-changed',
   PRIVACY_NOTICE: '/privacy-policy',

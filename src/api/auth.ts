@@ -13,6 +13,7 @@ interface IAuthPayload {
   password?: string;
   firstName?: string;
   lastName?: string;
+  token?: string;
 }
 
 export interface IUseAuthMutation {
@@ -32,7 +33,7 @@ export const register = async (registerPayload: IAuthPayload) => {
 }
 
 export const forgetPassword = async (forgetPasswordPayload: IAuthPayload) => {
- return axios.post(`${configs.baseURL}/auth/forget-password`, forgetPasswordPayload)
+ return axios.post(`${configs.baseURL}/auth/forgot-password`, forgetPasswordPayload)
 }
 
 export const resetPassword = async (resetPasswordPayload: IAuthPayload) => {

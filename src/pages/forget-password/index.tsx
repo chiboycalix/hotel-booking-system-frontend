@@ -1,6 +1,5 @@
 import React from "react";
 import { useMutation } from "@tanstack/react-query";
-
 import EmailIcon from "../../assets/images/auth/email.svg";
 import GoogleIcon from "../../assets/images/auth/google.svg";
 import FacebookIcon from "../../assets/images/auth/facebook.svg";
@@ -15,8 +14,8 @@ const ForgetPassword = () => {
   const [emailError, setEmailError] = React.useState<string | null>(null);
 
   const { mutate, isLoading, isError, error, isSuccess }: IUseAuthMutation = useMutation({
-    mutationFn: forgetPassword, onSuccess({ data }) {
-      setSuccessMessage(data.message)
+    mutationFn: forgetPassword, onSuccess({data}) {
+      setSuccessMessage(data.data.message)
     }
   });
 

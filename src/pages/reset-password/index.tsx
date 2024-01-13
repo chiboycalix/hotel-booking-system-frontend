@@ -53,7 +53,7 @@ const ResetPassword = () => {
     }
 
     mutate({
-      email: pathname?.split("/")[2],
+      token: pathname?.split("/")[2],
       password: formValue.password,
     })
   }
@@ -62,7 +62,7 @@ const ResetPassword = () => {
     if (isSuccess) {
       navigate(ROUTES.PASSWORD_CHANGED, {
         state: {
-          email: pathname?.split("/")[2],
+          token: pathname?.split("/")[2],
           password: formValue.password
         }
       })

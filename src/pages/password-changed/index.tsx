@@ -1,17 +1,19 @@
 import { useMutation } from "@tanstack/react-query";
+import jwt_decode from "jwt-decode";
 import { IUseAuthMutation, resetPassword } from "../../api/auth";
 import { Button, Loader } from "../../components";
 import { useLocation } from 'react-router-dom';
 
 const PasswordChanged = () => {
   const location = useLocation();
+  const { email } = jwt_decode(location.state.token) as { email: string };
   const { mutate, isLoading, isError, error, isSuccess }: IUseAuthMutation = useMutation({
     mutationFn: resetPassword
   });
 
   const handleResendVerificationLink = () => {
     mutate({
-      email: location.state.email,
+      token: location.state.token,
       password: location.state.password,
     })
   }
@@ -27,7 +29,7 @@ const PasswordChanged = () => {
         We have sent a verification link to your
         email address
         <span className="text-danger-color font-bold inline-block ml-1">
-          {location?.state?.email}
+          {email}
         </span>
       </p>
 
@@ -39,8 +41,6 @@ const PasswordChanged = () => {
           {isLoading ? <Loader /> : "Resend Link"}
         </Button>
       </div>
-      
-      
       {
          isSuccess && <div className="mt-20 absolute w-full top-full left-0 xl:mt-20">
           <Button variant="danger" onClick={() => null}>
@@ -48,8 +48,6 @@ const PasswordChanged = () => {
           </Button>
         </div>
       }
-
-
     </div>
   )
 }
