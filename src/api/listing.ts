@@ -1,5 +1,4 @@
-import axios from "axios";
-import { configs } from "../configs";
+import axiosInstance from "../configs";
 import { IListing } from "../interface/listing";
 
 interface AxiosError {
@@ -20,11 +19,11 @@ export interface IUseListingMutation {
 }
 
 export const getAllListings = async () => {
-  return axios.get(`${configs.baseURL}/listings`);
+  return axiosInstance.get(`/listing/all`);
 };
 
 export const updateListing = async ({ id, ...rest }: IListing) => {
-  return axios.put(`${configs.baseURL}/listings/${id}`, rest, {
+  return axiosInstance.put(`/listings/${id}`, rest, {
     headers: {
       'Content-Type': 'multipart/form-data',
     },
@@ -32,7 +31,7 @@ export const updateListing = async ({ id, ...rest }: IListing) => {
 }
 
 export const createListing = async (payload: IListing) => {
-  return axios.post(`${configs.baseURL}/listings`, payload, {
+  return axiosInstance.post(`/listings`, payload, {
     headers: {
       'Content-Type': 'multipart/form-data',
     },
@@ -41,5 +40,5 @@ export const createListing = async (payload: IListing) => {
 
 
 export const deleteListing = async ({ id }: IListing) => {
-  return axios.delete(`${configs.baseURL}/listings/${id}`);
+  return axiosInstance.delete(`/listings/${id}`);
 };

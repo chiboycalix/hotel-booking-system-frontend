@@ -17,12 +17,12 @@ const Listing = () => {
 
   const { mutate, isLoading, isError }: IUseListingMutation = useMutation({
     mutationFn: getAllListings, onSuccess({ data }) {
-      setListings(data.data.listings)
+      setListings(data.data)
     }
   });
   const { mutate: deleteListingMutation, isLoading: isDeleteListingLoading, isError: isDeleteListingError, isSuccess: isDeleteListingSuccess, error: deleteListingError }: any = useMutation({
     mutationFn: deleteListing, onSuccess({ data }) {
-      setListings(data.data.listings)
+      setListings(data.data)
     }
   });
 

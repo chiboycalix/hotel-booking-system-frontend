@@ -1,5 +1,4 @@
-import axios from "axios";
-import { configs } from "../configs";
+import axiosInstance from "../configs";
 
 interface AxiosError {
   response: {
@@ -19,5 +18,5 @@ export interface IUseListingMutation {
 }
 
 export const getUser = async ({id}: {id:string}) => {
-  return axios.get(`${configs.baseURL}/users/${id}`);
+  return axiosInstance.get(`/users/${id}`);
 };
