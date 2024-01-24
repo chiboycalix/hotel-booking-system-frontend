@@ -58,7 +58,7 @@ const Register = () => {
       setConfirmPasswordError(null);
     }
   }
-  const validateRegistration = (formValue:FormValue) => {
+  const validateRegistration = (formValue: FormValue) => {
     if (formValue.firstName.trim() === '') {
       setFirstNameError('First Name cannot be empty.');
       return

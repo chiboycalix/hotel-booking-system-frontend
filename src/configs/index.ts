@@ -4,8 +4,6 @@ const axiosInstance = axios.create({
   baseURL: process.env.REACT_APP_BASE_API_URL,
 });
 
-
-
 export const configs = {
   baseURL: process.env.REACT_APP_BASE_API_URL,
 };
@@ -22,8 +20,8 @@ export const axiosFetch = (addHeadersToRequest = true) => {
       return Promise.reject(error);
     }
   );
-  if(addHeadersToRequest){
-    return axiosInstance
+  if (addHeadersToRequest) {
+    return axiosInstance;
   }
-  return axios
+  return axios;
 };

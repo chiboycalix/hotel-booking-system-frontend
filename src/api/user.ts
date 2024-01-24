@@ -1,22 +1,22 @@
-import {axiosFetch} from "../configs";
+import { axiosFetch } from "../configs";
 
 interface AxiosError {
   response: {
     data: {
       data: {
-        error: string
-      }
-    }
-  }
+        error: string;
+      };
+    };
+  };
 }
 export interface IUseListingMutation {
   mutate: (payload: {}) => void;
-  isLoading: boolean
-  isError: boolean
-  error: AxiosError | null
-  isSuccess: boolean
+  isLoading: boolean;
+  isError: boolean;
+  error: AxiosError | null;
+  isSuccess: boolean;
 }
 
-export const getUser = async ({id}: {id:string}) => {
+export const getUser = async ({ id }: { id: string }) => {
   return axiosFetch(true).get(`/users/${id}`);
 };
