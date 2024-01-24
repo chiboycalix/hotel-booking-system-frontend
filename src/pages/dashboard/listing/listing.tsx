@@ -23,7 +23,7 @@ const ListingCard = (props: IListingCardProps) => {
   const navigate = useNavigate()
   const { listing, isVisible, setIsVisible, deleteListingError, handleEditListing, handleDeleteListing, isDeleteListingLoading, isDeleteListingError } = props
   const handleBookListing = (listing: IListing) => {
-    navigate(ROUTES.BOOK_LISTING,{
+    navigate(ROUTES.BOOK_LISTING, {
       state: {
         listing
       }

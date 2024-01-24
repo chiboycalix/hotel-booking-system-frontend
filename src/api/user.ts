@@ -1,4 +1,4 @@
-import axiosInstance from "../configs";
+import {axiosFetch} from "../configs";
 
 interface AxiosError {
   response: {
@@ -18,5 +18,5 @@ export interface IUseListingMutation {
 }
 
 export const getUser = async ({id}: {id:string}) => {
-  return axiosInstance.get(`/users/${id}`);
+  return axiosFetch(true).get(`/users/${id}`);
 };

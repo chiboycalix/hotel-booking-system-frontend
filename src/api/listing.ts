@@ -1,4 +1,4 @@
-import axiosInstance from "../configs";
+import {axiosFetch} from "../configs";
 import { IListing } from "../interface/listing";
 
 interface AxiosError {
@@ -19,11 +19,11 @@ export interface IUseListingMutation {
 }
 
 export const getAllListings = async () => {
-  return axiosInstance.get(`/listing/all`);
+  return axiosFetch().get(`/listing/all`);
 };
 
 export const updateListing = async ({ id, ...rest }: IListing) => {
-  return axiosInstance.put(`/listings/${id}`, rest, {
+  return axiosFetch().put(`/listings/${id}`, rest, {
     headers: {
       'Content-Type': 'multipart/form-data',
     },
@@ -31,14 +31,13 @@ export const updateListing = async ({ id, ...rest }: IListing) => {
 }
 
 export const createListing = async (payload: IListing) => {
-  return axiosInstance.post(`/listings`, payload, {
+  return axiosFetch().post(`/listings`, payload, {
     headers: {
       'Content-Type': 'multipart/form-data',
     },
   });
 }
 
-
 export const deleteListing = async ({ id }: IListing) => {
-  return axiosInstance.delete(`/listings/${id}`);
+  return axiosFetch().delete(`/listings/${id}`);
 };

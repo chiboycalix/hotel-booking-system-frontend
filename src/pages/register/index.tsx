@@ -13,9 +13,16 @@ import { IUseAuthMutation, register } from "../../api/auth";
 import { generalHelpers } from "../../utils";
 import { useNavigate } from "react-router-dom";
 
+interface FormValue {
+  email: string;
+  password: string;
+  confirm_password: string;
+  firstName: string;
+  lastName: string;
+}
 const Register = () => {
   const navigate = useNavigate();
-  const [formValue, setFormValue] = React.useState({ email: "", password: "", confirm_password: "", firstName: "", lastName: "" })
+  const [formValue, setFormValue] = React.useState<FormValue>({ email: "", password: "", confirm_password: "", firstName: "", lastName: "" })
   const [fistNameError, setFirstNameError] = React.useState<string | null>(null);
   const [lastNameError, setLastNameError] = React.useState<string | null>(null);
   const [emailError, setEmailError] = React.useState<string | null>(null);
@@ -24,11 +31,10 @@ const Register = () => {
 
   const { mutate, isLoading, isError, error, isSuccess }: IUseAuthMutation = useMutation({
     mutationFn: register, onSuccess({ data }) {
-      console.log(data, 'dataaaa')
       localStorage.setItem("hotelBookSystemJWT", data.data.token)
     }
   });
-console.log(error, 'errorerrorerror')
+
   const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     const { name, value } = event.currentTarget;
 
@@ -52,8 +58,7 @@ console.log(error, 'errorerrorerror')
       setConfirmPasswordError(null);
     }
   }
-  const handleRegisterUser = (e: React.FormEvent) => {
-    e.preventDefault()
+  const validateRegistration = (formValue:FormValue) => {
     if (formValue.firstName.trim() === '') {
       setFirstNameError('First Name cannot be empty.');
       return
@@ -88,7 +93,10 @@ console.log(error, 'errorerrorerror')
       setConfirmPasswordError('Passwords do not match.')
       return
     }
-
+  }
+  const handleRegisterUser = (e: React.FormEvent) => {
+    e.preventDefault()
+    validateRegistration(formValue)
     mutate({
       email: formValue.email,
       password: formValue.password,

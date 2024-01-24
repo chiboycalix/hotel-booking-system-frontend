@@ -1,4 +1,4 @@
-import axios from "axios";
+import {axiosFetch} from "../configs";
 import { configs } from "../configs";
 
 interface AxiosError {
@@ -25,25 +25,25 @@ export interface IUseAuthMutation {
 }
 
 export const login = async (loginPayload: IAuthPayload) => {
-  return axios.post(`${configs.baseURL}/auth/login`, loginPayload);
+  return axiosFetch(false).post(`${configs.baseURL}/auth/login`, loginPayload);
 };
 
 export const register = async (registerPayload: IAuthPayload) => {
-  return axios.post(`${configs.baseURL}/auth/register`, registerPayload)
+  return axiosFetch(false).post(`${configs.baseURL}/auth/register`, registerPayload)
 }
 
 export const forgetPassword = async (forgetPasswordPayload: IAuthPayload) => {
- return axios.post(`${configs.baseURL}/auth/forgot-password`, forgetPasswordPayload)
+ return axiosFetch(false).post(`${configs.baseURL}/auth/forgot-password`, forgetPasswordPayload)
 }
 
 export const resetPassword = async (resetPasswordPayload: IAuthPayload) => {
-  return axios.post(`${configs.baseURL}/auth/reset-password`, resetPasswordPayload)
+  return axiosFetch(false).post(`${configs.baseURL}/auth/reset-password`, resetPasswordPayload)
 }
 
 export const verifyAccount = async (verifyAccountPayload: IAuthPayload) => {
-  return axios.post(`${configs.baseURL}/auth/verify-account`, verifyAccountPayload)
+  return axiosFetch(false).post(`${configs.baseURL}/auth/verify-account`, verifyAccountPayload)
 }
 
 export const googleLogin = async () => {
-  return axios.get(`${configs.baseURL}/auth/login/google`)
+  return axiosFetch(false).get(`${configs.baseURL}/auth/login/google`)
 }
