@@ -2,7 +2,7 @@ import React from "react";
 import { useMutation } from "@tanstack/react-query";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import { ROUTES } from "../../constants/routes";
+import { ROUTES } from "../../routes";
 import { IUseAuthMutation, verifyAccount } from "../../api/auth";
 import { Button } from "../../components";
 

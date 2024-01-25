@@ -6,7 +6,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import "./index.css";
-import { ROUTES } from "./constants/routes";
+import { ROUTES } from "./routes";
 import { Protected } from "./components";
 import App from "./App";
 import ErrorPage from "./pages/error-page";

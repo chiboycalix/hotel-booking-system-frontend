@@ -5,7 +5,7 @@ import WarnIconRed from '../../../assets/images/danger-icon.svg'
 import { Button, Loader, Modal } from '../../../components'
 import { IListing } from '../../../interface/listing'
 import { useNavigate } from 'react-router-dom'
-import { ROUTES } from '../../../constants/routes'
+import { ROUTES } from '../../../routes'
 
 
 interface IListingCardProps {

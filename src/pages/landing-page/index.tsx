@@ -5,7 +5,7 @@ import landing from "../../assets/images/landing/carousel-one.jpeg";
 import "./landing.css";
 import icon from "../../assets/images/Icon.png";
 import { Button } from "../../components";
-import { ROUTES } from "../../constants/routes";
+import { ROUTES } from "../../routes";
 
 const LandingPage = () => {
   const navigate = useNavigate();

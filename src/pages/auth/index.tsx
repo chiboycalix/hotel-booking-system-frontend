@@ -1,6 +1,6 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom';
-import { ROUTES } from '../../constants/routes';
+import { ROUTES } from '../../routes';
 
 import TopLeftImage from "../../assets/images/auth/top-left.svg";
 import BottomLeftImage from "../../assets/images/auth/bottom-left.svg";

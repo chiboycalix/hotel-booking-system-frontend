@@ -4,7 +4,7 @@ import EmailIcon from "../../assets/images/auth/email.svg";
 import GoogleIcon from "../../assets/images/auth/google.svg";
 import FacebookIcon from "../../assets/images/auth/facebook.svg";
 import { Button, Divider, Input, Loader } from "../../components";
-import { ROUTES } from "../../constants/routes";
+import { ROUTES } from "../../routes";
 import { IUseAuthMutation, forgetPassword } from "../../api/auth";
 import { generalHelpers } from "../../utils";
 

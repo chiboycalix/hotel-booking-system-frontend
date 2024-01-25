@@ -11,7 +11,7 @@ const CreateListing = () => {
   const [listing, setListing] = React.useState({
     roomImage: "",
     roomName: "",
-    location: "",
+    roomLocation: "",
     roomBedType: "",
     roomPrice: ""
   })
@@ -19,8 +19,8 @@ const CreateListing = () => {
 
   const { mutate, isLoading, isError, error, isSuccess }: any = useMutation({
     mutationFn: createListing, onSuccess({ data }) {
-      console.log(data, "data")
-      setSuccessMessage(data.message)
+      console.log(data, 'datadata')
+      setSuccessMessage(data.message || "Listing created successfully")
     }
   });
 
@@ -29,20 +29,20 @@ const CreateListing = () => {
     const formData = new FormData();
     const roomImage = imageFile
     const roomName = listing.roomName
-    const roomLocation = listing.location
+    const roomLocation = listing.roomLocation
     const roomBedType = listing.roomBedType
     const roomPrice = listing.roomPrice
 
     formData.append('roomImage', imageFile as any);
     formData.append('roomName', roomName);
-    formData.append('location', roomLocation);
+    formData.append('roomLocation', roomLocation);
     formData.append('roomBedType', roomBedType);
     formData.append('roomPrice', roomPrice);
 
     mutate({
       roomImage: roomImage,
       roomName: roomName,
-      location: roomLocation,
+      roomLocation: roomLocation,
       roomBedType:roomBedType,
       roomPrice: roomPrice,
     })
@@ -88,7 +88,7 @@ const CreateListing = () => {
         </div>
         {isError && <div
         className="break-words rounded-b-lg bg-danger-100 px-4 py-4 text-danger-700 mb-4">
-        {error?.response?.data.data?.error}
+        {error?.response?.data?.message}
       </div>}
       {isSuccess && <div className="break-words rounded-b-lg bg-success-100 px-4 py-4 text-success-700 mt-4">
         {successMessage}
@@ -103,9 +103,9 @@ const CreateListing = () => {
           </div>
           <div className='basis-6/12'>
             <div className='mb-2'>
-              <label htmlFor="location" className='text-sm font-bold'>City:</label>
+              <label htmlFor="roomLocation" className='text-sm font-bold'>City:</label>
             </div>
-            <Input onChange={handleChange} type="text" placeHolder="" value={listing.location} id="location" name="location" />
+            <Input onChange={handleChange} type="text" placeHolder="" value={listing.roomLocation} id="roomLocation" name="roomLocation" />
           </div>
         </div>
 

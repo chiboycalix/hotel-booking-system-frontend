@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom"
-import { ROUTES } from "../constants/routes"
+import { ROUTES } from "../routes"
 import { useRedirect } from "../hooks/useRedirect"
 import Header from "./Header"
 import Sidebar from "./Sidebar"

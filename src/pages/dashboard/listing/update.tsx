@@ -13,7 +13,7 @@ const UpdateListing = () => {
   const [listing, setListing] = React.useState({
     roomImage: "",
     roomName: "",
-    location: "",
+    roomLocation: "",
     roomBedType: "",
     roomPrice: ""
   })
@@ -22,7 +22,7 @@ const UpdateListing = () => {
   const { mutate, isLoading, isError, error, isSuccess }: any = useMutation({
     mutationFn: updateListing, onSuccess({ data }) {
       console.log(data, "data")
-      setSuccessMessage(data.message)
+      setSuccessMessage(data.message || "Listing updated successfully")
     }
   });
 
@@ -31,20 +31,20 @@ const UpdateListing = () => {
     const formData = new FormData();
     const roomImage = imageFile ? imageFile : location.state.listing.roomImage
     const roomName = listing.roomName ? listing.roomName : location.state.listing.roomName;
-    const roomLocation = listing.location ? listing.location : location.state.listing.location;
+    const roomLocation = listing.roomLocation ? listing.roomLocation : location.state.listing.roomLocation;
     const roomBedType = listing.roomBedType ? listing.roomBedType : location.state.listing.roomBedType;
     const roomPrice = listing.roomPrice ? listing.roomPrice : location.state.listing.roomPrice;
 
     formData.append('roomImage', imageFile as any);
     formData.append('roomName', roomName);
-    formData.append('location', roomLocation);
+    formData.append('roomLocation', roomLocation);
     formData.append('roomBedType', roomBedType);
     formData.append('roomPrice', roomPrice);
 
     mutate({
       roomImage: roomImage,
       roomName: roomName,
-      location: roomLocation,
+      roomLocation: roomLocation,
       roomBedType:roomBedType,
       roomPrice: roomPrice,
       id: location.state.listing.id
@@ -108,7 +108,7 @@ const UpdateListing = () => {
             <div className='mb-2'>
               <label htmlFor="location" className='text-sm font-bold'>City:</label>
             </div>
-            <Input onChange={handleChange} type="text" placeHolder="" value={listing.location ? listing.location : location.state.listing.location} id="" name="location" />
+            <Input onChange={handleChange} type="text" placeHolder="" value={listing.roomLocation ? listing.roomLocation : location.state.listing.roomLocation} id="" name="roomLocation" />
           </div>
         </div>
 

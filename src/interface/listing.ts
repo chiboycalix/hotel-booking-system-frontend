@@ -1,6 +1,6 @@
 
 export interface IListing {
-  id: string;
+  _id: string;
   roomName: string;
   roomImage: string;
   roomPrice: number;

@@ -5,7 +5,7 @@ import PlusIcon from '../../../assets/images/plus-icon.svg'
 import { Button } from '../../../components'
 import { IUseListingMutation, deleteListing, getAllListings } from '../../../api/listing'
 import { useMutation } from '@tanstack/react-query'
-import { ROUTES } from '../../../constants/routes'
+import { ROUTES } from '../../../routes'
 import { useNavigate } from 'react-router-dom'
 import { IListing } from '../../../interface/listing'
 import ListingCard from './listing'
@@ -22,7 +22,7 @@ const Listing = () => {
   });
   const { mutate: deleteListingMutation, isLoading: isDeleteListingLoading, isError: isDeleteListingError, isSuccess: isDeleteListingSuccess, error: deleteListingError }: any = useMutation({
     mutationFn: deleteListing, onSuccess({ data }) {
-      setListings(data.data)
+      console.log(data, 'datadata')
     }
   });
 
