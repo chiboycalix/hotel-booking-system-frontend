@@ -2,13 +2,13 @@ import React from 'react'
 import ListViewIcon from '../../../assets/images/row-view-icon-colored.svg'
 import GridViewIcon from '../../../assets/images/grid-view-icon.svg'
 import PlusIcon from '../../../assets/images/plus-icon.svg'
+import ListingCard from './listing'
 import { Button } from '../../../components'
 import { IUseListingMutation, deleteListing, getAllListings } from '../../../api/listing'
 import { useMutation } from '@tanstack/react-query'
 import { ROUTES } from '../../../routes'
 import { useNavigate } from 'react-router-dom'
 import { IListing } from '../../../interface/listing'
-import ListingCard from './listing'
 
 const Listing = () => {
   const navigate = useNavigate()
