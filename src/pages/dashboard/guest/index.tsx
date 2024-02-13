@@ -139,7 +139,7 @@ const Guest = () => {
   }
   )
 
-  return <Table data={users} columns={columns} />
+  return <Table data={users} columns={columns} hasCheckBox/>
 }
 
 export default Guest;
