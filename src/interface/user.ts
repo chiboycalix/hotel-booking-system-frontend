@@ -1,9 +1,9 @@
 export interface IGuest {
   id: number;
-  name: string;
-  dateOrder: number;
-  room: number;
-  checkIn: string;
-  checkOut: string;
-  status: "active" | "inactive";
+  name: string | React.ReactNode;
+  dateOrder: number | React.ReactNode;
+  room: number | React.ReactNode;
+  checkIn: string | React.ReactNode;
+  checkOut: string | React.ReactNode;
+  status: string | React.ReactNode;
 }

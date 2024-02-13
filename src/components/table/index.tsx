@@ -1,41 +1,80 @@
-import GridList from './gridList';
-import ListHeading from './listHeading';
-import ListRow from './listRow';
-import ListBody from './listBody';
-import RenderColumns from './renderColumns';
-import RenderListHeader from './renderListHeader';
-
-interface IRow {
-  value: number;
-  isChecked: boolean;
-  onRowClick: (e:React.ChangeEvent<HTMLInputElement>) => void;
-  columns: React.ReactNode[];
-  actions: React.ReactNode[];
-}
+import { useState } from 'react';
+import { IGuest } from '../../interface/user';
+import Actions from '../actions';
 
 interface ITable {
-  headers: string[];
-  rows: IRow[];
-  hasAction:boolean;
-  hasCheckBox:boolean;
+  data: IGuest[];
+  columns: { key: string; title: string }[];
 }
+const Table = ({ data, columns }: ITable) => {
+  const [selectAll, setSelectAll] = useState(false);
+  const [selectedRows, setSelectedRows] = useState<any[]>([]);
 
-const Table = ({ headers, rows, hasAction, hasCheckBox, ...props }: ITable) => {
+  const handleSelectAll = () => {
+    setSelectAll(!selectAll);
+    setSelectedRows(selectAll ? [] : data.map((row: any) => row.id));
+  };
+
+  const handleSelectRow = (id: number) => {
+    if (selectedRows.includes(id)) {
+      setSelectedRows(selectedRows.filter((rowId: any) => rowId !== id));
+    } else {
+      setSelectedRows([...selectedRows, id]);
+    }
+  };
+
+
+
   return (
-    <GridList>
-      <ListHeading>{RenderListHeader(headers, hasAction, hasCheckBox)}</ListHeading>
-      <ListBody {...props}>
-        {rows?.map(({ columns, actions, onRowClick, isChecked, value }: IRow, idx: number) => {
-          return (
-            <>
-              <ListRow key={idx} clickable={true} hasCheckBox={hasCheckBox} onRowClick={onRowClick} isChecked={isChecked} value={value}>
-                <RenderColumns columns={columns} actions={actions} hasAction={hasAction} />
-              </ListRow>
-            </>
-          );
-        })}
-      </ListBody>
-    </GridList>
+    <>
+      <div className='flex justify-end w-full py-6'>
+        {
+          selectedRows.length > 0 ? <Actions onUpdate={() => null} setIsVisible={() => null} /> : null
+        }
+        
+      </div>
+      <div className="overflow-x-auto bg-white flex flex-col">
+        <table className="min-w-full border-none border-collapse">
+          <thead>
+            <tr>
+              <th className="border-b p-2 text-left py-4">
+                <input
+                  type="checkbox"
+                  checked={selectAll}
+                  onChange={handleSelectAll}
+                  className='accent-primary-color w-4 h-4'
+                />
+              </th>
+              {columns.map((column: any) => (
+                <th key={column.key} className="border-b p-2 text-left">
+                  {column.title}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((row: any) => (
+              <tr key={row.id} className='text-left'>
+                <td className="border-b p-2">
+                  <input
+                    type="checkbox"
+                    checked={selectedRows.includes(row.id)}
+                    onChange={() => handleSelectRow(row.id)}
+                    className='accent-primary-color w-4 h-4'
+                  />
+                </td>
+                {columns.map((column: any) => (
+                  <td key={column.key} className="border-b p-2">
+                    {row[column.key]}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
+
   );
 };
 

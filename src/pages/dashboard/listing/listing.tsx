@@ -1,12 +1,10 @@
 import React from 'react'
-import EditIcon from '../../../assets/images/edit-icon.svg'
-import DeleteIcon from '../../../assets/images/delete-icon.svg'
 import WarnIconRed from '../../../assets/images/danger-icon.svg'
 import { Button, Loader, Modal } from '../../../components'
 import { IListing } from '../../../interface/listing'
 import { useNavigate } from 'react-router-dom'
 import { ROUTES } from '../../../routes'
-
+import Actions from '../../../components/actions'
 
 interface IListingCardProps {
   listing: IListing;
@@ -49,16 +47,7 @@ const ListingCard = (props: IListingCardProps) => {
         </div>
       </div>
       <div className='basis-2/12 flex md:flex-col flex-row justify-between items-end py-4 gap-6 sm:gap-0'>
-        <div className='flex gap-4'>
-          <div className='flex gap-2 cursor-pointer' onClick={() => handleEditListing(listing)}>
-            <img src={EditIcon} alt={EditIcon} className='w-4' />
-            <p className='text-success-color text-sm'>Edit</p>
-          </div>
-          <div className='flex gap-2 cursor-pointer' onClick={() => setIsVisible(!isVisible)}>
-            <img src={DeleteIcon} alt={DeleteIcon} className='w-3' />
-            <p className='text-sm text-red-600'>Delete</p>
-          </div>
-        </div>
+        <Actions onUpdate={handleEditListing} recordToUpdate={listing} isVisible={isVisible} setIsVisible={setIsVisible}/>
         <div className='sm:w-40 w-32'>
           <Button onClick={() => handleBookListing(listing)} variant="primary">
             Book now
