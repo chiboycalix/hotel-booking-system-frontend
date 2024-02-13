@@ -25,7 +25,9 @@ module.exports = {
         'content-bg': '#F3F8F8',
         'input-bg': '#F5F5F5',
         'success-color': '#2A9554',
-        'blue':'#0085FF'
+        'blue':'#0085FF',
+        'orange':'#FF9900',
+        'green': '#2A9554'
       },
       boxShadow: {
         'sidebar': '0px 20px 20px 10px rgba(133, 133, 133, 0.10)',
