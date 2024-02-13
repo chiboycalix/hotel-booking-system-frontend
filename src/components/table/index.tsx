@@ -38,7 +38,7 @@ const Table = ({ data, columns, hasCheckBox }: ITable) => {
           <thead>
             <tr>
               {
-                hasCheckBox && <th className="border-b p-2 text-left py-4">
+                hasCheckBox && <th className="border-b p-4 text-left py-4">
                   <input
                     type="checkbox"
                     checked={selectAll}
@@ -49,7 +49,7 @@ const Table = ({ data, columns, hasCheckBox }: ITable) => {
               }
 
               {columns.map((column: any) => (
-                <th key={column.key} className="border-b p-2 text-left">
+                <th key={column.key} className="border-b p-4 text-left">
                   {column.title}
                 </th>
               ))}
@@ -59,7 +59,7 @@ const Table = ({ data, columns, hasCheckBox }: ITable) => {
             {data.map((row: any) => (
               <tr key={row.id} className='text-left'>
                 {
-                  hasCheckBox && <td className="border-b p-2">
+                  hasCheckBox && <td className="border-b p-4">
                     <input
                       type="checkbox"
                       checked={selectedRows.includes(row.id)}
@@ -70,7 +70,7 @@ const Table = ({ data, columns, hasCheckBox }: ITable) => {
                 }
 
                 {columns.map((column: any) => (
-                  <td key={column.key} className="border-b p-2">
+                  <td key={column.key} className="border-b p-4">
                     {row[column.key]}
                   </td>
                 ))}
