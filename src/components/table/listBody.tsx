@@ -1,11 +1,15 @@
 import React from 'react';
 
-const ListBody = ({ children, gridTemplate }: any) => {
+interface IListBody {
+  children: React.ReactNode;
+  gridTemplate?: React.ReactNode
+}
+const ListBody = ({ children, gridTemplate }: IListBody) => {
   const elem = Array.isArray(children) ? children : [children];
 
   return (
     <div className='table-row-group overflow-hidden'>
-      {elem?.map((child, idx) =>
+      {elem?.map((child) =>
         React.cloneElement(child, {
           ...child.props,
           gridTemplate,

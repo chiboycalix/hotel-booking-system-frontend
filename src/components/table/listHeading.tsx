@@ -1,6 +1,11 @@
 import React from 'react';
 
-const ListHeading = ({ children, setGridTemplate }: any) => {
+interface IListHeading {
+  children: React.ReactNode;
+  setGridTemplate?: (templateSize: string) => void;
+}
+
+const ListHeading = ({ children, setGridTemplate }: IListHeading) => {
   const elem = React.useMemo(() => Array.isArray(children) ? children : [children], [children]);
   const appendToItem = (str = '', list: any) => {
     if (!Array.isArray(list) || !list?.length) {

@@ -1,6 +1,9 @@
 import React from 'react';
 
-const GridList = ({ children }: any) => {
+interface IGridList {
+  children: React.ReactNode;
+}
+const GridList = ({ children }: IGridList) => {
   const [gridTemplate, setGridTemplate] = React.useState('');
   const elem = Array.isArray(children) ? children : [children];
 

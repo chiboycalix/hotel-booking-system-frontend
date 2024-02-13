@@ -1,9 +1,14 @@
 import ListCol from "./listCol";
 
-const RenderColumns = ({ columns, hasAction }: any) => {
+interface IRenderColumns {
+  columns: React.ReactNode[];
+  hasAction: boolean;
+  actions?:React.ReactNode[];
+}
+const RenderColumns = ({ columns, hasAction }: IRenderColumns) => {
   return (
     <>
-      {columns?.map((cell: any, index: number) => {
+      {columns?.map((cell: React.ReactNode, index: number) => {
         return (
           <>
             <ListCol key={index}>{cell}</ListCol>

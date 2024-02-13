@@ -1,7 +1,5 @@
-import React from 'react';
-
-const CheckBox = () => {
-  return <input type="checkbox" className='bg-primary-color' />
+const CheckBox = ({ onRowClick, isChecked, value }:any) => {
+  return <input type="checkbox" onChange={(e: React.ChangeEvent<HTMLInputElement>) => onRowClick(e)} checked={isChecked} value={value}/>
 }
 
 export default CheckBox;

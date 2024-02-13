@@ -5,15 +5,30 @@ import ListBody from './listBody';
 import RenderColumns from './renderColumns';
 import RenderListHeader from './renderListHeader';
 
-const Table = ({ headers, rows, hasAction, hasCheckBox, ...props }: any) => {
+interface IRow {
+  value: number;
+  isChecked: boolean;
+  onRowClick: (e:React.ChangeEvent<HTMLInputElement>) => void;
+  columns: React.ReactNode[];
+  actions: React.ReactNode[];
+}
+
+interface ITable {
+  headers: string[];
+  rows: IRow[];
+  hasAction:boolean;
+  hasCheckBox:boolean;
+}
+
+const Table = ({ headers, rows, hasAction, hasCheckBox, ...props }: ITable) => {
   return (
     <GridList>
       <ListHeading>{RenderListHeader(headers, hasAction, hasCheckBox)}</ListHeading>
       <ListBody {...props}>
-        {rows?.map(({ columns, actions, onRowClick, isOpened, record }: any, idx: number) => {
+        {rows?.map(({ columns, actions, onRowClick, isChecked, value }: IRow, idx: number) => {
           return (
             <>
-              <ListRow isOpened={isOpened} key={idx} onClick={onRowClick} clickable={true} hasCheckBox={hasCheckBox}>
+              <ListRow key={idx} clickable={true} hasCheckBox={hasCheckBox} onRowClick={onRowClick} isChecked={isChecked} value={value}>
                 <RenderColumns columns={columns} actions={actions} hasAction={hasAction} />
               </ListRow>
             </>
